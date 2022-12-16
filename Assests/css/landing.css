@@ -298,7 +298,7 @@ h5 {
   right: 20px;
   font-size: 2em;
   color: rgba(0, 0, 0, 0.1);
-  transition: tranform 1s;
+  transition: tranform 2s;
 }
 .container .tab:hover label::after {
   color: #333;
@@ -329,7 +329,7 @@ h5 {
 
 .container .tab .content {
   max-height: 0;
-  transition: 3s;
+  transition: 2s;
   overflow: hidden;
 }
 
