@@ -44,13 +44,16 @@
 html,
 body {
   height: 100vh;
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
   font-family: var(--font-family);
   background-color: var(--bg-body);
+  overflow: hidden;
 }
 
 .calendar {
+  margin-top: 200px;
+  margin-left: 300px;
   height: max-content;
   width: max-content;
   background-color: var(--bg-main);
@@ -298,7 +301,68 @@ body {
   background-color: var(--color-hover);
 }
 
-@keyframes to-top {
+input[type="date"] {
+  font-size: 20px;
+  width: 322px;
+  height: 50px;
+  position: absolute;
+  top: 250px;
+  left: 850px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  border: none;
+}
+input[type="date"]::-webkit-calendar-picker-button {
+  opacity: 0;
+}
+
+body h3 {
+  position: absolute;
+  top: 205px;
+  left: 858px;
+  font-size: 23px;
+}
+.time-start {
+  font-size: 20px;
+  width: 151px;
+  height: 50px;
+  position: absolute;
+  top: 375px;
+  left: 858px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  border: none;
+}
+.time-end {
+  font-size: 20px;
+  width: 151px;
+  height: 50px;
+  position: absolute;
+  top: 375px;
+  left: 1020px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  border: none;
+}
+.h3-2 {
+  position: absolute;
+  top: 335px;
+  left: 860px;
+  font-size: 23px;
+}
+/* @keyframes to-top {
   0% {
     transform: translateY(100%);
     opacity: 0;
@@ -307,4 +371,4 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
