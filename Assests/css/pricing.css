@@ -1,0 +1,146 @@
+body {
+  font-family: poppins;
+  background: url(../images/flip-bg.jpg);
+  background-color: rgb(190, 190, 190);
+  background-blend-mode: multiply;
+  overflow: hidden;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: poppins;
+  background: url(../images/flip-bg.jpg);
+  background-color: rgb(190, 190, 190);
+  background-blend-mode: multiply;
+  overflow: hidden;
+}
+body h1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.single-card-2 {
+  height: 450px;
+  max-width: 300px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.wrapper-2 {
+  perspective: 900px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.single-card-2 {
+  text-align: center;
+  transition: all 1.5s cubic-bezier(0.7, -0.5, 0.3, 1.8);
+  transform-style: preserve-3d;
+}
+
+.wrapper-2:hover .single-card-2 {
+  transform: rotateY(180deg);
+}
+
+.front-2,
+.back-2 {
+  width: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front-2 {
+  cursor: pointer;
+  height: 100%;
+  background-color: #037cf2;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #000;
+  font-weight: 800;
+}
+.back-2 {
+  transform: rotateY(180deg);
+  position: absolute;
+  border-radius: 50px;
+  height: 450px;
+  background: #fff;
+}
+
+.content-2 {
+  padding-top: 25%;
+}
+.content-2 h2 {
+  font-size: 35px;
+  margin: 0;
+  font-weight: 300;
+}
+.content-2 h4 {
+  margin: 0;
+}
+
+.single-price {
+  position: relative;
+  top: -130px;
+  text-align: center;
+  background: #161619;
+  transition: 0.7s;
+  margin-top: 50px;
+  border-radius: 50px;
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.single-price h3 {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  font-family: poppins;
+  color: #fff;
+}
+.single-price h4 {
+  font-size: 48px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 35px;
+}
+.single-price h4 span.sup {
+  vertical-align: text-top;
+  font-size: 25px;
+}
+
+.deal-top {
+  position: relative;
+  background: #037cf2;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 30px 24px 0;
+  transition: 0.7s;
+  border-radius: 50px 50px 0px 0px;
+}
+.deal-bottom ul {
+  margin: 0;
+  padding: 0;
+}
+.deal-bottom ul li {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 300;
+  margin-top: 16px;
+  padding-top: 5px;
+  padding-bottom: 26px;
+  list-style: none;
+}
