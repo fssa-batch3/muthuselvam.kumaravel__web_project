@@ -422,90 +422,148 @@ form button {
   transform: scale(0.9);
 }
 
-/* .container-review {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e3f2fd;
-}
-.testimonial {
+/* footer */
+footer {
   position: relative;
-  max-width: 900px;
+  bottom: 0px;
   width: 100%;
-  padding: 50px 0;
-  overflow: hidden;
+  background: #000;
 }
-.testimonial .image {
-  height: 170px;
-  width: 170px;
-  object-fit: cover;
-  border-radius: 50%;
+.footer-main {
+  padding-top: 10px;
 }
-.testimonial .slide {
+.main-content-foot {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 30px;
-  height: 100%;
-  width: 100%;
 }
-.slide p {
-  text-align: center;
-  padding: 0 160px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
+.main-content-foot .box-foot {
+  flex-basis: 50%;
+  padding: 10px 20px;
 }
-.slide .quote-icon {
-  font-size: 30px;
-  color: #4070f4;
-}
-.slide .details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.details .name {
-  font-size: 14px;
+.box-foot h2 {
+  font-size: 1.125rem;
   font-weight: 600;
-  color: #333;
-}
-.details .job {
-  font-size: 12px;
-  font-weight: 400;
-  color: #333;
-}
-/* swiper button css */
-/* .nav-btn {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  transform: translateY(30px);
-  background-color: rgba(0, 0, 0, 0.1);
-  transition: 0.2s;
-}
-.nav-btn:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.nav-btn::after,
-.nav-btn::before {
-  font-size: 20px;
+  text-transform: uppercase;
   color: #fff;
 }
-.swiper-pagination-bullet {
-  background-color: rgba(0, 0, 0, 0.8);
+.box-foot .content-foot {
+  margin: 20px 0 0 0;
+  position: relative;
 }
-.swiper-pagination-bullet-active {
-  background-color: #4070f4;
+.box-foot .content-foot:before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
 }
-@media screen and (max-width: 768px) {
-  .slide p {
-    padding: 0 20px;
-  }
-  .nav-btn {
-    display: none;
-  }
-}  */
+.box-foot .content-foot:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 15%;
+  background: #f9004d;
+  top: -10px;
+}
+.left-foot .content-foot p {
+  text-align: justify;
+  color: #fff;
+  padding-top: 10px;
+}
+.left-foot .content-foot .social {
+  margin: 20px 0 0 0;
+}
+.left-foot .content-foot .social a {
+  padding: 0 2px;
+}
+.left-foot .content-foot .social a span {
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left-foot .content-foot .social a span:hover {
+  background: #f9004d;
+}
+.center-foot .content-foot .fas {
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center-foot .content-foot .fas:hover {
+  background: #f9004d;
+}
+.center-foot .content-foot .text {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+  color: #fff;
+}
+.center-foot .content-foot .phone {
+  margin: 15px 0;
+}
+.right-foot form .text {
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right-foot form .msg {
+  margin-top: 10px;
+}
+.right-foot form input,
+.right-foot form textarea {
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right-foot form input:focus,
+.right-foot form textarea:focus {
+  outline-color: #3498db;
+}
+.right-foot form input {
+  height: 35px;
+}
+.right-foot form .btn {
+  margin-top: 10px;
+}
+.right-foot form .btn-foot button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f9004d;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.right-foot form .btn-foot button:hover {
+  background: #000;
+}
+.bottom-foot center {
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom-foot center span {
+  color: #656565;
+}
+.bottom-foot center a {
+  color: #f9004d;
+  text-decoration: none;
+}
+.bottom-foot center a:hover {
+  text-decoration: underline;
+}
