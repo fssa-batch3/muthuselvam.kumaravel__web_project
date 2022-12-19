@@ -120,7 +120,7 @@ body {
 }
 
 .calendar-days div:hover span {
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
 }
 
 .calendar-days div span:nth-child(1),
