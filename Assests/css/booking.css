@@ -1,0 +1,103 @@
+body {
+  background-image: url(../../Assests/images/360_F_550265413_q14RreIwKgEuWEfZ6s6xIgish7SfOZrC.jpg);
+  background-size: cover;
+}
+#form {
+  background-color: #000;
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  opacity: 0.7;
+}
+#form h3 {
+  border-bottom: 2px solid #fff;
+  width: 210px;
+  padding: 5px;
+}
+::placeholder {
+  color: #fff;
+}
+#input #input-group {
+  width: 300px;
+  margin: 5px;
+  padding: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+#input2 #input-group {
+  width: 195px;
+  margin: 5px;
+  padding: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+#input3 #input-group {
+  margin-left: 50px;
+  padding: 20px;
+}
+#input4 #input-group {
+  width: 300px;
+  margin: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  padding: 20px;
+}
+#input4 #input-group1 {
+  width: 615px;
+  margin: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  padding: 20px;
+}
+#input5 h3 {
+  border-bottom: 2px solid #fff;
+  width: 220px;
+  padding: 5px;
+  padding: 10px;
+}
+#input6 #input-group {
+  width: 300px;
+  margin: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  padding: 20px;
+}
+#input6 #input-group1 {
+  width: 615px;
+  margin: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  padding: 20px;
+}
+.text-center {
+  color: #fff;
+}
+
+.btn {
+  margin-top: 20px;
+}

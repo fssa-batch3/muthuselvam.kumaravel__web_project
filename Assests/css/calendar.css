@@ -362,3 +362,48 @@ body h3 {
   left: 860px;
   font-size: 23px;
 }
+
+.location {
+  position: absolute;
+  top: 460px;
+}
+
+.location-1 {
+  position: absolute;
+  top: 500px;
+  left: 858px;
+  width: 320px;
+  height: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--font-family);
+}
+
+.continue {
+  color: #fff;
+  background-color: var(--blue);
+  position: absolute;
+  top: 590px;
+  left: 858px;
+  width: 320px;
+  height: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.continue:hover {
+  transform: scale(0.9);
+  background-color: #5959ff;
+}

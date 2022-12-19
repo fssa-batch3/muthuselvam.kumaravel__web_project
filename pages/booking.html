@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airline Booking Form</title>
+    <link rel="stylesheet" href="../Assests/css/booking.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-group">
+        <h1 class="text-center">Booking Summary</h1>
+
+        <div id="form">
+          <h3 class="text-white">Booking Details</h3>
+
+          <div id="input">
+            <input type="text" id="input-group" placeholder="From" />
+            <input type="text" id="input-group" placeholder="To" />
+            <input type="text" id="input-group" placeholder="Departure Date" />
+            <input type="text" id="input-group" placeholder="Departure Time" />
+            <select id="input-group" style="background: black">
+              <option value="">Preffered cab</option>
+              <option value="">XYLO</option>
+              <option value="">INNOVA</option>
+              <option value="">ERTIGA</option>
+            </select>
+            <select id="input-group" style="background: black">
+              <option value="">Preffered Seating</option>
+              <option value="">Co Driver</option>
+              <option value="">Window Seat</option>
+              <option value="">Last seat</option>
+            </select>
+          </div>
+
+          <div id="input2">
+            <input
+              type="number"
+              id="input-group"
+              placeholder="Adult or teenager"
+            />
+            <input type="number" id="input-group" placeholder="Age" />
+            <input type="number" id="input-group" placeholder="weight" />
+          </div>
+
+          <div id="input4">
+            <input type="text" id="input-group" placeholder="Return Date" />
+            <input type="text" id="input-group" placeholder="Return time" />
+            <input type="text" id="input-group1" placeholder="Any Message" />
+          </div>
+
+          <div id="input5">
+            <h3 class="text-white">Personal Details</h3>
+          </div>
+
+          <div id="input6">
+            <input type="text" id="input-group" placeholder="Full Nmae" />
+            <input type="number" id="input-group" placeholder="Phone Number" />
+            <input type="email" id="input-group1" placeholder="Email" />
+          </div>
+
+          <button type="submit" class="btn btn-warning text-white">
+            <a href="../pages/payment.html"> Submit Form </a>
+          </button>
+          <button type="reset" class="btn btn-primary">Clear Form</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

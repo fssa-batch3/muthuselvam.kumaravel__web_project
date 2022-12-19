@@ -11,9 +11,26 @@
   text-transform: uppercase;
 }
 
+body {
+  background-image: linear-gradient(
+    to right top,
+    #ff0ab1,
+    #e600be,
+    #c500cd,
+    #9800dc,
+    #4d12eb
+  );
+  overflow: hidden;
+}
+
+body h1 {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 40px;
+}
+
 .container {
   min-height: 100vh;
-  background: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,4 +189,9 @@
 .container .card-container .back .box img {
   margin-top: 30px;
   height: 30px;
+}
+
+.pay {
+  color: #000;
+  font-weight: 800;
 }

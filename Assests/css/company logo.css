@@ -11,13 +11,25 @@ body {
 }
 
 body h1 {
-  /* position: relative; */
-  /* left: 100px; */
-  margin-left: 80px;
-  margin-top: 60px;
+  position: absolute;
+  left: 75px;
+  top: 55px;
+  /* margin-left: 80px; */
+  /* margin-top: 60px; */
   color: #ffffff;
   font-size: 45px;
   font-weight: 800;
+  z-index: 1;
+}
+
+.company-2 {
+  background-color: #000;
+  width: 550px;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 60px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .main {

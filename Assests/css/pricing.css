@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 body {
-  font-family: poppins;
-  background: url(../images/flip-bg.jpg);
-  background-color: rgb(190, 190, 190);
-  background-blend-mode: multiply;
+  font-family: "poppins";
+  background: url(../images/rm251-aum-14.jpg);
+  background-repeat: no-repeat;
+  /* width: 100vh; */
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  /* background-color: rgb(25, 25, 25); */
+  /* background-blend-mode: multiply; */
+  background-color: #00385a;
   overflow: hidden;
 }
 
@@ -14,15 +20,15 @@ body {
   align-items: center;
   justify-content: space-around;
   font-family: poppins;
-  background: url(../images/flip-bg.jpg);
-  background-color: rgb(190, 190, 190);
-  background-blend-mode: multiply;
+
   overflow: hidden;
 }
 body h1 {
   color: #fff;
   font-size: 50px;
   font-weight: 800;
+  margin-left: 500px;
+  margin-top: 150px;
 }
 
 .single-card-2 {
@@ -37,6 +43,7 @@ body h1 {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  margin-top: -350px;
 }
 
 .single-card-2 {
@@ -62,7 +69,7 @@ body h1 {
 .front-2 {
   cursor: pointer;
   height: 100%;
-  background-color: #037cf2;
+  background-color: #3a6def;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 50px;
