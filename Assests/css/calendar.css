@@ -407,3 +407,8 @@ body h3 {
   transform: scale(0.9);
   background-color: #5959ff;
 }
+
+.continue-1 {
+  color: #000;
+  text-decoration: none;
+}
