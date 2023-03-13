@@ -52,3 +52,30 @@ body {
   background-color: #98d484;
   color: rgb(161, 161, 161);
 }
+.back-2 {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  margin-left: 450px;
+  font-family: "poppins";
+  /* margin-top: -500px; */
+  position: absolute;
+  top: 650px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #54b435;
+  color: #000;
+  /* padding: 10px; */
+  font-weight: 800;
+}
+
+.back-2 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.back-2:hover {
+  background-color: #98d484;
+  color: rgb(161, 161, 161);
+}

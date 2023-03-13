@@ -553,9 +553,9 @@ footer {
   background: #000;
 }
 .bottom-foot center {
-  padding: 5px;
+  /* padding: 5px; */
   font-size: 0.9375rem;
-  background: #151515;
+  /* background: #151515; */
 }
 .bottom-foot center span {
   color: #656565;

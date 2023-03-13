@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Assests/css/upcompanyinfo.css" />
+    <title>company update</title>
+  </head>
+  <body>
+    <div class="whole_div">
+      <img id="for_img" width="200" height="350" />
+      <form id="update_form">
+        <label>Company Title <input type="text" id="cName" /></label>
+        <label>Company Innertitle<input type="text" id="cPrice" /></label>
+        <label>Image<input type="text" id="cImage" /></label>
+        <label>Description<input type="textarea" id="cDescription" /></label>
+        <button type="submit">SUBMIT</button>
+        <button type="submit" onclick="del()">DELETE</button>
+      </form>
+    </div>
+    <script>
+      const upForm = document.getElementById("update_form");
+      let params = window.location.search;
+      let parameter = new URLSearchParams(params);
+      let paraName = parameter.get("id");
+      let parraArray = JSON.parse(localStorage.getItem("proObject"));
+      let paraObj = parraArray.find(function (user) {
+        let title = user["title"];
+        // console.log(productName);
+        if (paraName == title) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      let title = document.getElementById("cName");
+      let innertitle = document.getElementById("cPrice");
+      let src = document.getElementById("cImage");
+      let alt = document.getElementById("cDescription");
+      let img = document.getElementById("for_img");
+      img.setAttribute("src", paraObj["img"]["src"]);
+      title.value = paraObj["title"];
+      innertitle.value = paraObj["innertitle"];
+      src.value = paraObj["img"]["src"];
+      alt.value = paraObj["img"]["alt"];
+      console.log(paraObj);
+      console.log(parraArray);
+      let index = parraArray.indexOf(paraObj);
+      console.log(index);
+      upForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let title = document.getElementById("cName").value;
+        let innertitle = document.getElementById("cPrice").value;
+        let src = document.getElementById("cImage").value;
+        let alt = document.getElementById("cDescription").value;
+        proObject = {
+          title,
+          innertitle,
+          image: { src, alt },
+        };
+        let newObj = Object.assign(paraObj, proObject);
+        parraArray[index] = newObj;
+        alert("updated Successfully ");
+        localStorage.setItem("proObject", JSON.stringify(parraArray));
+        window.location.href = "./admincompany.html";
+      });
+      function del() {
+        console.log(index);
+        let check = confirm("Would you like to delete your account ");
+        if (check == true) {
+          console.log(parraArray);
+          let index = parraArray.indexOf(paraObj);
+          parraArray.splice(index, 1);
+          console.log(parraArray);
+          alert("ur account delete successfully");
+          localStorage.setItem("proObject", JSON.stringify(parraArray));
+          window.location.href = "./admin.html";
+        }
+      }
+    </script>
+  </body>
+</html>

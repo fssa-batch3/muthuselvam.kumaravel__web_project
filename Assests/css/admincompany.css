@@ -1,0 +1,655 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #09161d;
+}
+
+body h1 {
+  position: absolute;
+  left: 75px;
+  top: 55px;
+  /* margin-left: 80px; */
+  /* margin-top: 60px; */
+  color: #ffffff;
+  font-size: 45px;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.company-2 {
+  background-color: #000;
+  width: 550px;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 60px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 100px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  min-height: 100vh;
+  background: #09161d;
+  /* margin-top: 50px; */
+  /* margin-left: 50px; */
+  /* margin-right: 50px; */
+  margin: 100px 50px 100px 80px;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card:hover {
+  border: 1.5px solid #2196f3;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #2196f3;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card::after {
+  content: "Zoho";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card .imgbx {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: -20px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card .imgbx img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.card:hover .imgbx img {
+  max-width: 50%;
+  height: 50%;
+}
+
+.card .contentbx {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 15px;
+}
+
+.card .contentbx h3 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card .contentbx .freshworks {
+  position: relative;
+  top: 200px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #2196f3;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card:hover .contentbx .freshworks {
+  top: 0;
+  opacity: 1;
+}
+
+/*  card 2 */
+
+/* .card-2 {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-2:hover {
+  border: 1.5px solid #ce2232;
+}
+
+.card-2::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ce2232;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card-2:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card-2::after {
+  content: "Zoho";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card-2 .imgbx-2 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: -20px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card-2 .imgbx-2 img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.card-2:hover .imgbx-2 img {
+  max-width: 180px;
+  height: 150px;
+}
+
+.card-2 .contentbx-2 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 15px;
+}
+
+.card-2 .contentbx-2 h3 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-2 .contentbx-2 .zoho {
+  position: relative;
+  top: 200px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #ce2232;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card-2:hover .contentbx-2 .zoho {
+  top: 0;
+  opacity: 1;
+}
+
+/* card 3 */
+
+/* .card-3 {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden;
+  /* border: 2px solid #9e0ac0; */
+/* } */
+/* .card-3:hover {
+  border: 1.5px solid #9e0ac0;
+}
+
+.card-3::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #9e0ac0;
+  transform: skewY(345deg);
+  transition: 0.5s;
+  /* border: 2px solid #9e0ac0; */
+/* }
+
+.card-3:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card-3::after {
+  content: "TCS";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card-3 .imgbx-3 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: -20px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card-3 .imgbx-3 img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.card-3:hover .imgbx-3 img {
+  max-width: 170px;
+  height: 120px;
+}
+
+.card-3 .contentbx-3 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.card-3 .contentbx-3 h3 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-3 .contentbx-3 .tcs {
+  position: relative;
+  top: 200px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #9e0ac0;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card-3:hover .contentbx-3 .tcs {
+  top: 0;
+  opacity: 1;
+} */
+
+/* card 4 */
+
+/* .card-4 {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden; */
+/* border: 2px solid #9e0ac0; */
+/* }
+.card-4:hover {
+  border: 1.5px solid #db0011;
+}
+
+.card-4::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #d3313f;
+  transform: skewY(345deg);
+  transition: 0.5s;
+  border: 2px solid #9e0ac0; */
+/* }
+
+.card-4:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card-4::after {
+  content: "HSBC";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+} */
+
+/* .card-4 .imgbx-4 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: -20px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card-4 .imgbx-4 img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.card-4:hover .imgbx-4 img {
+  max-width: 190px;
+  height: 140px;
+}
+
+.card-4 .contentbx-4 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+.card-4 .contentbx-4 h3 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-4 .contentbx-4 .hsbc {
+  position: relative;
+  top: 200px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #db0011;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card-4:hover .contentbx-4 .hsbc {
+  top: 0;
+  opacity: 1;
+}
+
+/*  card 5  */
+
+/* .card-5 {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden; */
+/* border: 2px solid #9e0ac0; 
+}
+.card-5:hover { */
+/* border: 1.5px solid #f06b33;
+} */
+
+/* .card-5::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #e98e67;
+  transform: skewY(345deg);
+  transition: 0.5s; */
+/* border: 2px solid #9e0ac0; */
+/* }
+
+.card-5:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card-5::after {
+  content: "Cloudera";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card-5 .imgbx-5 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: -20px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card-5 .imgbx-5 img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.card-5:hover .imgbx-5 img {
+  max-width: 190px;
+  height: 140px;
+}
+
+.card-5 .contentbx-5 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+.card-5 .contentbx-5 h3 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-5 .contentbx-5 .cloudera {
+  position: relative;
+  top: 200px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #f06b33;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card-5:hover .contentbx-5 .cloudera {
+  top: 0;
+  opacity: 1;
+} */
+
+/*  card 6 */
+
+/* .card-6 {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden; */
+/* border: 2px solid #9e0ac0; */
+/* }
+.card-6:hover {
+  border: 1.5px solid #0a66c2;
+}
+
+.card-6::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #0a66c2;
+  transform: skewY(345deg);
+  transition: 0.5s; */
+/* border: 2px solid #9e0ac0; */
+/* }
+
+.card-6:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card-6::after {
+  content: "Linkedin";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.card-6 .imgbx-6 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: -20px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card-6 .imgbx-6 img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+
+.card-6:hover .imgbx-6 img {
+  max-width: 100px;
+  height: 100px;
+}
+
+.card-6 .contentbx-6 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.card-6 .contentbx-6 h3 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-6 .contentbx-6 .linked {
+  position: relative;
+  top: 200px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #0a66c2;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card-6:hover .contentbx-6 .linked {
+  top: 0;
+  opacity: 1;
+}    */
