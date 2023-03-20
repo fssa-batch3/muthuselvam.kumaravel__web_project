@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting Page UI Design</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Assests/css/profile.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="logo">
+        <h1 class="logo">INFINITI</h1>
+      </div>
+
+      <div class="rightbox">
+        <div class="profile">
+          <form action="" id="form_pro">
+            <h1>Personal Info</h1>
+            <h2>Full Name</h2>
+            <input type="text" id="full_name" />
+
+            <h2>Last Name</h2>
+            <input type="text" id="last_name" />
+
+            <h2>Email</h2>
+            <input type="text" id="email" disabled />
+
+            <h2>Username</h2>
+            <input type="text" id="username" />
+
+            <button id="delete">Delete</button>
+
+            <button class="btn" type="submit">update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      // for email
+      let oneUser = JSON.parse(localStorage.getItem("login_user"));
+      // for array
+      let fullArray = JSON.parse(localStorage.getItem("user_info"));
+
+      let selectedUser = fullArray.find(function (event) {
+        let emailValue = event["userEmail"];
+        if (oneUser == emailValue) {
+          return true;
+        }
+      });
+      console.log(selectedUser);
+
+      let first_name = document.getElementById("full_name");
+      let last_name = document.getElementById("last_name");
+      let email = document.getElementById("email");
+      let username = document.getElementById("username");
+
+      email.value = selectedUser["userEmail"];
+      first_name.value = selectedUser["first_name"];
+      last_name.value = selectedUser["last_name"];
+      username.value = selectedUser["userName"];
+
+      let pForm = document.getElementById("form_pro");
+      pForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let first_name = document.getElementById("full_name").value;
+        let last_name = document.getElementById("last_name").value;
+        let email = document.getElementById("email").value;
+        let userName = document.getElementById("username").value;
+
+        let newData = { first_name, last_name, email, userName };
+
+        let combinedData = Object.assign(selectedUser, newData);
+        console.log(combinedData);
+
+        let findIndex = fullArray.indexOf(selectedUser);
+
+        console.log(findIndex);
+        fullArray[findIndex] = combinedData;
+        localStorage.setItem("user_info", JSON.stringify(fullArray));
+        alert("successfully changed");
+      });
+
+      let delete_user = document.getElementById("delete");
+      delete_user.addEventListener("click", function (event) {
+        event.preventDefault();
+        let indexDel = fullArray.indexOf(selectedUser);
+        let msg = confirm("Are you sure you want to delete this account");
+        if (msg !== true) {
+          return;
+        } else {
+          fullArray.splice(indexDel, 1);
+          console.log(fullArray);
+          localStorage.setItem("user_info", JSON.stringify(fullArray));
+          // window.location.href ="";
+        }
+      });
+
+      // let email = document.getElementById("email");
+      // let username = document.getElementById("username");
+      // let password = document.getElementById("password");
+
+      // email.value = selectOneUser["email"];
+      // username.value = selectOneUser["username"];
+      // password.value = selectOneUser["password"];
+      // document.getElementById("username").value = profilevalue[0]["username"];
+      // document.getElementById("email").value = profilevalue[0]["email"];
+      // document.getElementById("password").value = profilevalue[0]["password"];
+
+      // let form2_pro = document.getElementById("form_pro");
+      // form2_pro.addEventListener("submit", function (form_pro) {
+      //   form_pro.preventDefault();
+      //   const text_in = document.getElementById("text_in").value;
+      //   const text2_in = document.getElementById("text2_in").value;
+      //   const email = document.getElementById("email").value;
+      //   const username = document.getElementById("username").value;
+      //   const password = document.getElementById("password").value;
+      //   const newData = { text_in, text2_in, email, username, password };
+
+      //   console.log(newData);
+      //   const combineData = Object.assign(selectOneUser, newData);
+      //   console.log(combineData);
+      // });
+    </script>
+  </body>
+</html>
