@@ -22,25 +22,93 @@
         <div class="content">
           <div class="info">
             <div class="name">Alex Smith</div>
+            <div class="job">date</div>
+            
           </div>
          
         </div>
       </div>
       
-
-
-
-
-
-
-
-
     </div>
+      
 
 <script>
 
-  
+
+let review_list = [
+        {
+          para:"asdfghjklqwertyuiopzxcvbnmasdfghjklsdfghjklqwertyuiopzxcvbnmasdfghjklsdfghjklqwertyuiopzxcvbnmasdfghjkl",
+          name: "FRESHWORKS",
+          date: "zoho",
+          
+        },
+        {
+          para:"asdfghjklqwertyuiopzxcvbnmasdfghjkl",
+          name: "FRESHWORKS",
+          date: "zoho",
+          
+        },
+        {
+          para:"asdfghjklqwertyuiopzxcvbnmasdfghjkl",
+          name: "FRESHWORKS",
+          date: "zoho",
+          
+        },
+      ]
+
+
+for (let i = 0; i < review_list.length; i++) {
+        
+    
+        let div_box = document.createElement("div");
+        div_box.setAttribute("class", "box");
+        console.log(div_box);
+
+       
+        let i_fas = document.createElement("i");
+        i_fas.setAttribute("class", "fas fa-quote-left quote");
+        div_box.append(i_fas);
+
+        let para = document.createElement("p");
+        para.innerText= review_list[i].para
+        div_box.append(para)
+
+
+        let div_content = document.createElement("div");
+        div_content.setAttribute("class", "content");
+        div_box.append(div_content);
+
+        let div_info = document.createElement("div");
+        div_info.setAttribute("class", "info");
+        div_content.append(div_info);
+
+        let div_name = document.createElement("div");
+        div_name.setAttribute("class", "name");
+        div_name.innerText = review_list[i].name
+        div_info.append(div_name);
+
+        let div_job = document.createElement("div");
+        div_job.setAttribute("class", "job");
+        div_job.innerText = review_list[i].date
+        div_info.append(div_job);
+
+
+        let div_wrapper= document.querySelector(".wrapper")
+        div_wrapper.append(div_box)
+
+        console.log(review_list)
+
+      }
+
+
+
+
+
 </script>
+
+
+
+
 
 
   </body>
