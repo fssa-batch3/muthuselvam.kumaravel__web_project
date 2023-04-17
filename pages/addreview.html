@@ -17,7 +17,6 @@
           </div>
         </div>
       </li>
-      
       <li class="form-line jf-required" data-type="control_textarea" id="id_4"><label class="form-label form-label-top form-label-auto" id="label_4" for="input_4"> Describe Your Feedback:<span class="form-required">*</span> </label>
         <div id="cid_4" class="form-input-wide jf-required" data-layout="full"> <textarea id="input_4" class="form-textarea validate[required]" name="q4_describeYour" style="width:648px;height:163px" data-component="textarea" required="" aria-labelledby="label_4"></textarea> </div>
       </li>
@@ -56,18 +55,16 @@ const form = document.getElementById("231025735507451");
         if (localStorage.getItem("reviewObject") != null) {
           reviewArray = JSON.parse(localStorage.getItem("reviewObject"));
         }
-        let feedback = document.getElementById("input_4").value;
-        let firstname = document.getElementById("first_8").value;
+        let para = document.getElementById("input_4").value;
+        let name = document.getElementById("first_8").value;
         let lastname = document.getElementById("last_8").value;
         let email = document.getElementById("input_6").value;
         let date = document.getElementById("input_7").value;
         
 
         reviewObject = {
-          feedback,
-          firstname,
-          lastname,
-          email,
+          para,
+          name,
           date,
         };
         reviewArray.push(reviewObject);

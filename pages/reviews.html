@@ -12,22 +12,7 @@
     <div class="review-top"></div>
 
     <div class="wrapper">
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">date</div>
-            
-          </div>
-         
-        </div>
-      </div>
+     
       
     </div>
       
@@ -56,6 +41,13 @@ let review_list = [
         },
       ]
 
+
+
+      const review = JSON.parse(localStorage.getItem("reviewObject"));
+      for(let i=0; i < review.length; i++){
+        review_list.push(review[i])
+      }
+      console.log(review)
 
 for (let i = 0; i < review_list.length; i++) {
         
