@@ -22,7 +22,7 @@
       </li>
       <li class="form-line jf-required" data-type="control_fullname" id="id_8"><label class="form-label form-label-top form-label-auto" id="label_8" for="first_8"> Name<span class="form-required">*</span> </label>
         <div id="cid_8" class="form-input-wide jf-required" data-layout="full">
-          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_8" name="q8_name[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 given-name" size="10" value="" data-component="first" aria-labelledby="label_8 sublabel_8_first" required="" /><label class="form-sub-label" for="first_8" id="sublabel_8_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_8" name="q8_name[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 family-name" size="15" value="" data-component="last" aria-labelledby="label_8 sublabel_8_last" required="" /><label class="form-sub-label" for="last_8" id="sublabel_8_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
+          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_8" name="q8_name[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 given-name" size="10" value="" data-component="first" aria-labelledby="label_8 sublabel_8_first" required="" /><label class="form-sub-label" for="first_8" id="sublabel_8_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_8" name="q8_name[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 family-name" size="15" value="" data-component="last" aria-labelledby="label_8 sublabel_8_last" required /><label class="form-sub-label" for="last_8" id="sublabel_8_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
         </div>
       </li>
       <li class="form-line jf-required" data-type="control_email" id="id_6"><label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> E-mail<span class="form-required">*</span> </label>
@@ -66,6 +66,8 @@ const form = document.getElementById("231025735507451");
           para,
           name,
           date,
+          email,
+          lastname,
         };
         reviewArray.push(reviewObject);
         console.log(reviewArray);

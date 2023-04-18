@@ -32,6 +32,10 @@ body {
   height: 200vh;
 }
 
+a{
+  text-decoration: none;
+}
+
 body h1 {
   font-size: 50px;
   margin-top: 180px;
@@ -61,6 +65,16 @@ body h1 {
   justify-content: space-between;
   gap: 20px;
   word-wrap: break-word;
+}
+.edit-button{
+background:    #9900ff;
+border-radius: 15px;
+padding:       20px 45px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal bold 26px/1 "Calibri", sans-serif;
+text-align:    center;
+margin-left: 1000px;
 }
 .box {
   background: #fff;
