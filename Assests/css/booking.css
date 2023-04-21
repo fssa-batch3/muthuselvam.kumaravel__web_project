@@ -2,6 +2,9 @@ body {
   background-image: url(../../Assests/images/360_F_550265413_q14RreIwKgEuWEfZ6s6xIgish7SfOZrC.jpg);
   background-size: cover;
 }
+.container {
+  margin-top: 50px;
+}
 #form {
   background-color: #000;
   height: 100vh;

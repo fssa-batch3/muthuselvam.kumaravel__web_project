@@ -67,7 +67,7 @@ form.sign-in-form {
 }
 
 .input-field {
-  max-width: 380px;
+  max-width: 390px;
   width: 100%;
   background-color: #f0f0f0;
   margin: 10px 0;
@@ -77,8 +77,20 @@ form.sign-in-form {
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+  margin-bottom: 30px;
 }
 
+.input-field small {
+  color: red;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.input-field.error small {
+  visibility: visible;
+}
 .input-field i {
   text-align: center;
   line-height: 55px;
@@ -90,11 +102,12 @@ form.sign-in-form {
 .input-field input {
   background: none;
   outline: none;
-  border: none;
+
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
   color: #333;
+  /* border-color: red; */
 }
 
 .input-field input::placeholder {
@@ -102,7 +115,15 @@ form.sign-in-form {
   font-weight: 500;
 }
 
-.social-text {
+/* .input-field.success input {
+  border-color: #2ecc71;
+}
+
+.input-field.error input {
+  border-color: red;
+} */
+
+.input-field .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
 }
@@ -110,6 +131,68 @@ form.sign-in-form {
 .social-media {
   display: flex;
   justify-content: center;
+}
+
+form div input {
+  /* border-color: red; */
+  border-radius: 30px;
+  width: 390px;
+  margin-left: -6px;
+  padding: 10px;
+  outline: none;
+}
+
+#username:valid {
+  border-color: green;
+}
+
+#username:focus:invalid {
+  border-color: red;
+}
+#password:valid {
+  border-color: green;
+}
+
+#username_1:valid {
+  border-color: green;
+}
+
+#username_1:focus:invalid {
+  border-color: red;
+}
+
+#email_1:valid {
+  border-color: green;
+}
+
+#email_1:focus:invalid {
+  border-color: red;
+}
+#password_1:valid {
+  border-color: green;
+}
+
+#password_1:focus:invalid {
+  border-color: red;
+}
+
+#password_2:valid {
+  border-color: green;
+}
+
+#password_2:focus:invalid {
+  border-color: red;
+}
+
+/* .sign-up-form div input :invalid {
+  border-color: red;
+}
+
+.sign-up-form div input:focus:valid {
+  border-color: green;
+} */
+.input-field {
+  height: fit-content;
 }
 
 .social-icon {

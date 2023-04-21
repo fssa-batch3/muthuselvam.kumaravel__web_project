@@ -14,19 +14,28 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <!-- log in -->
+          <form action="#" class="sign-in-form" id="log_form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                pattern="[A-Za-z]{1,8}"
+                required
+              />
             </div>
             <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                pattern="[A-Za-z]{1,8}"
+                required
+              />
             </div>
-            <button class="btn solid">
-              <a href="../pages/company logo.html"> Login</a>
-            </button>
+            <button type="submit" class="btn solid">Login</button>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -43,28 +52,56 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+
+          <!-- sign in -->
+
+          <form name="myForm" action="#" class="sign-up-form" id="sign_form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
               <input
-                type="password"
-                minlength="8"
-                characters
-                placeholder="Password"
+                type="text"
+                id="username_1"
+                name="fname"
+                autocomplete="off"
+                pattern="[A-Za-z]{1,8}"
+                placeholder="Username"
+                required
               />
+              <small id="small"></small>
             </div>
-            <button class="btn">
-              <a href="../pages/company logo.html"> Sign up</a>
-            </button>
+            <div class="input-field">
+              <input
+                class="email-hover"
+                type="email"
+                id="email_1"
+                placeholder="Email"
+                required
+              />
+              <small>Error Message</small>
+            </div>
+            <div class="input-field">
+              <input
+                id="password_1"
+                type="password"
+                placeholder="Password"
+                autocomplete="off"
+                pattern="[A-Za-z]{1,8}"
+                required
+              />
+              <small>Error Message</small>
+            </div>
+            <div class="input-field">
+              <input
+                id="password_2"
+                type="password"
+                placeholder="Confirm Password"
+                autocomplete="off"
+                pattern="[A-Za-z]{1,8}"
+                required
+              />
+              <small>Error Message</small>
+            </div>
+            <button class="btn" type="submit">Sign up</button>
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">

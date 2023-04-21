@@ -22,21 +22,31 @@
     <script>
       const upForm = document.getElementById("update_form");
       let params = window.location.search;
+<<<<<<< HEAD
       console.log(params);
+=======
+>>>>>>> origin/main
       let parameter = new URLSearchParams(params);
       let paraName = parameter.get("id");
       let parraArray = JSON.parse(localStorage.getItem("proObject"));
       let paraObj = parraArray.find(function (user) {
         let title = user["title"];
+<<<<<<< HEAD
         console.log(title);
+=======
+        // console.log(productName);
+>>>>>>> origin/main
         if (paraName == title) {
           return true;
         } else {
           return false;
         }
       });
+<<<<<<< HEAD
       console.log(paraObj);
 
+=======
+>>>>>>> origin/main
       let title = document.getElementById("cName");
       let innertitle = document.getElementById("cPrice");
       let src = document.getElementById("cImage");
