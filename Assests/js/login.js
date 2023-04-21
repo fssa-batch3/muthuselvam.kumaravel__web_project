@@ -111,15 +111,22 @@ logIn.addEventListener("submit", (event) => {
   let user_arr = [];
   let defaultData = JSON.parse(localStorage.getItem("user_info"));
   console.log(defaultData);
-  let username_log = document.getElementById("username").value;
+  let email_log = document.getElementById("email").value;
   let password_log = document.getElementById("password").value;
 
   let isMatch = false;
   for (let i = 0; i < defaultData.length; i++) {
+
+    if(email_log == "admin@gmail.com" && password_log == "admin"){
+      alert("Logged In");
+    window.open("/pages/admincompany.html");
+    } else{
+
+
     if (
-      username_log == defaultData[i]["userName"] &&
+      email_log == defaultData[i]["userEmail"] &&
       password_log == defaultData[i]["userPassword"]
-    ) {
+    ) { 
       isMatch = true;
       user_arr.push(defaultData[i]);
       window.localStorage.setItem(
@@ -130,6 +137,7 @@ logIn.addEventListener("submit", (event) => {
     } else {
       isMatch = false;
     }
+  }
   }
   if (isMatch === true) {
     alert("Logged In");

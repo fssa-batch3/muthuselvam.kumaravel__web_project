@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,59 +52,3 @@
     </script>
   </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>update products</title>
-    <link rel="stylesheet" href="../Assests/css/updatecompany.css" />
-  </head>
-  <body>
-    <div class="parent">
-      <div class="parent-div">ADD A NEW PRODUCT</div>
-      <div class="whole">
-        <form id="update-form">
-          <label>Company Title <input type="text" id="cName" /></label>
-          <label>company Innertitle<input type="text" id="cPrice" /></label>
-          <label>image<input type="text" id="cImage" /></label>
-          <label>Description<input type="textarea" id="cDescription" /></label>
-          <label>Image Width<input type="text" id="cWidth" /></label>
-          <label>Image Height<input type="text" id="cHeight" /></label>
-          <button type="submit">ADD</button>
-        </form>
-      </div>
-    </div>
-    <script>
-      const form = document.getElementById("update-form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let productArray = [];
-        if (localStorage.getItem("proObject") != null) {
-          productArray = JSON.parse(localStorage.getItem("proObject"));
-        }
-        let title = document.getElementById("cName").value;
-        let innertitle = document.getElementById("cPrice").value;
-        let src = document.getElementById("cImage").value;
-        let alt = document.getElementById("cDescription").value;
-        let width = document.getElementById("cWidth").value;
-        let height = document.getElementById("cHeight").value;
-
-        proObject = {
-          title,
-          innertitle,
-          img: { src, alt },
-          width,
-          height,
-        };
-        productArray.push(proObject);
-        console.log(productArray);
-        stringProduct = JSON.stringify(productArray);
-        localStorage.setItem("proObject", stringProduct);
-      });
-    </script>
-  </body>
-</html>
->>>>>>> origin/main
