@@ -65,17 +65,42 @@ body h1 {
   justify-content: space-between;
   gap: 20px;
   word-wrap: break-word;
+  margin-top: -1000px;
 }
 .edit-button{
-background:    #9900ff;
+/* background:    #9900ff; */
 border-radius: 15px;
 padding:       20px 45px;
 color:         #ffffff;
 display:       inline-block;
 font:          normal bold 26px/1 "Calibri", sans-serif;
 text-align:    center;
+margin-top: 90px;
 margin-left: 1000px;
 }
+
+.add-button{
+  border-radius: 15px;
+padding:       20px 45px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal bold 26px/1 "Calibri", sans-serif;
+text-align:    center;
+/* margin-left: 1000px; */
+margin-left: 1000px;
+    margin-top: -1000px;
+}
+
+
+.edit-button a{
+  color: #000;
+}
+
+.add-button a{
+  color: #000;
+}
+
+
 .box {
   background: #fff;
   width: calc(33% - 10px);
@@ -126,4 +151,18 @@ margin-left: 1000px;
 }
 .box:hover .content .image img {
   border-color: #fff;
+}
+.review-top{
+  margin-top: -1700px;
+}
+
+
+
+
+
+.review-top h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
 }
