@@ -118,7 +118,7 @@ logIn.addEventListener("submit", (event) => {
   for (let i = 0; i < defaultData.length; i++) {
 
     if(email_log == "admin@gmail.com" && password_log == "admin"){
-      alert("Logged In");
+      Notify.success("Logged In");
     window.open("/pages/admincompany.html");
     } else{
 
@@ -140,10 +140,10 @@ logIn.addEventListener("submit", (event) => {
   }
   }
   if (isMatch === true) {
-    alert("Logged In");
-    // window.location.href = "";
+    Notify.success("Logged In");
+    window.open("/pages/profile.html")
   } else {
-    alert("Invalid username / password");
+    Notify.error("Invalid username / password");
   } // window.location.href = "";
 });
 
