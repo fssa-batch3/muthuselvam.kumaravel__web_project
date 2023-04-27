@@ -55,6 +55,7 @@ form.addEventListener("submit", function (event) {
       localStorage.setItem("user_info", str);
       console.log(str);
       alert("user added");
+      window.open("/pages/login.html")
     }
   }
 });
