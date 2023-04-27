@@ -142,7 +142,7 @@ logIn.addEventListener("submit", (event) => {
   }
   if (isMatch === true) {
     Notify.success("Logged In");
-    window.open("/index.html")
+    window.open("/pages/company logo.html")
   } else {
     Notify.error("Invalid username / password");
   } // window.location.href = "";
