@@ -168,6 +168,13 @@ form div input {
 #email_1:focus:invalid {
   border-color: red;
 }
+#email:valid {
+  border-color: green;
+}
+
+#email:focus:invalid {
+  border-color: red;
+}
 #password_1:valid {
   border-color: green;
 }
@@ -183,6 +190,26 @@ form div input {
 #password_2:focus:invalid {
   border-color: red;
 }
+.strength{
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  bottom: 8px;
+  /* border-radius: 10px; */
+
+}
+#strength-bar{
+  background-color: #dcdcdc;
+  width: 60%;
+  height: 10px;
+  position: relative;
+  margin-top: -15px;
+  margin-left: -5px;
+  border-radius: 10px;
+}
+
+
 
 /* .sign-up-form div input :invalid {
   border-color: red;

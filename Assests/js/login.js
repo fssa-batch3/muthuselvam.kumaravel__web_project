@@ -8,6 +8,66 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
+let validator = false;
+
+let parameters = {
+  count : false,
+  letters : false,
+  upletters : false,
+  numbers : false,
+  special : false
+}
+
+let strengthBar = document.getElementById("strength-bar");
+function strengthChecker(){ 
+let password = document.getElementById("password_1").value;
+//Now the values ​​of the parameters have been added.
+  parameters.letters = (/[a-z]+/.test(password))?true:false;
+  parameters.upletters = (/[A-Z]+/.test(password))?true:false;
+  parameters.numbers = (/[0-9]+/.test(password))?true:false;
+  parameters.special = (/[!\”$%&/()=?@~`\\.\’;:+=^*_-]+/.test(password))?true:false;
+  parameters.count = (password.length > 7)?true:false;
+  let barLength = Object.values(parameters).filter(value=>value);
+  console.log(Object.values(parameters), barLength);
+  strengthBar.innerHTML = "";
+  for( let i in barLength){
+      let span = document.createElement("span");
+      span.classList.add("strength");
+      strengthBar.appendChild(span);
+  }
+  let spanRef = document.getElementsByClassName("strength");
+  for( let i = 0; i < spanRef.length; i++){
+      switch(spanRef.length - 1){
+          case 0 :
+              spanRef[i].style.background = "#710c04";
+              spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+
+              break;
+          case 1:
+              spanRef[i].style.background = "#ff3e36";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              // spanRef[i].style.paddingLeft= "-5px";
+              break;
+          case 2:
+              spanRef[i].style.background = "#ff691f";
+              // spanRef[i].style.marginLeft= "-10px";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              break;
+          case 3:
+              spanRef[i].style.background = "#ffda36";
+              // spanRef[i].style.marginLeft= "-10px";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              break;
+              case 4:
+              spanRef[i].style.background = "#0be881";
+              // spanRef[i].style.marginLeft= "-10px";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              validator = true;
+              break;
+      }
+  }
+}
+
 let checking = false;
 let check2 = false;
 let checkPass;
@@ -50,12 +110,17 @@ form.addEventListener("submit", function (event) {
       }
     }
     if (check2 === false) {
+if (validator == true){
+
       userArr.push(userObj);
       const str = JSON.stringify(userArr);
       localStorage.setItem("user_info", str);
       console.log(str);
       alert("user added");
       window.open("/pages/login.html")
+} else {
+  alert("Password is not strong")
+}
     }
   }
 });

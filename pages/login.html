@@ -31,10 +31,13 @@
                 type="password"
                 id="password"
                 placeholder="Password"
-                pattern="[A-Za-z]{1,8}"
+                pattern="^\S{8,25}\S"
+                minlength="8"
+                maxlength="25"
                 required
               />
             </div>
+            <!-- <div id=”strength-bar”></div> -->
             <button type="submit" class="btn solid">Login</button>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
@@ -85,18 +88,25 @@
                 type="password"
                 placeholder="Password"
                 autocomplete="off"
-                pattern="[A-Za-z]{1,8}"
+                minlength="8"
+                maxlength="25"
+                oninput="strengthChecker()"
+                pattern="^\S{8,25}\S"
                 required
               />
               <small>Error Message</small>
             </div>
+            <div id="strength-bar" ></div>
+
             <div class="input-field">
               <input
                 id="password_2"
                 type="password"
                 placeholder="Confirm Password"
                 autocomplete="off"
-                pattern="[A-Za-z]{1,8}"
+                minlength="8"
+                maxlength="25"
+                pattern="^\S{8,25}\S"
                 required
               />
               <small>Error Message</small>
