@@ -207,7 +207,7 @@ logIn.addEventListener("submit", (event) => {
   }
   if (isMatch === true) {
     Notify.success("Logged In");
-    window.open("/pages/company logo.html")
+    window.open("/pages/otpverify.html")
   } else {
     Notify.error("Invalid username / password");
   } // window.location.href = "";
