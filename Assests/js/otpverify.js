@@ -50,6 +50,7 @@ function verifyOtp(){
     // verify_btn.addEventListener("submit",()=>{
         if (otpverify == getOtp){
             alert("Logged IN")
+            window.open("/pages/profile.html")
         }
         else {
             alert("Invalid OTP")

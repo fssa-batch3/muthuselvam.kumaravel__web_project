@@ -20,26 +20,13 @@
 
 
 <div class="row">
-<div class="col-xl-4">
 
-<div class="card mb-4 mb-xl-0">
-<div class="card-header">Profile Picture</div>
-<div class="card-body text-center">
-
-<img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-
-<div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-
-<button class="btn btn-primary" type="button">Upload new image</button>
-</div>
-</div>
-</div>
 <div class="col-xl-8">
 
 <div class="card mb-4">
 <div class="card-header">Account Details</div>
 <div class="card-body">
-<form>
+<form id="form_pro">
 
 <div class="mb-3">
 <label class="small mb-1" for="inputUsername">Username</label>
@@ -62,13 +49,13 @@
 <div class="row gx-3 mb-3">
 
 <div class="col-md-6">
-<label class="small mb-1" for="inputOrgName">Company name</label>
-<input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" >
+<label class="small mb-1" for="inputOrgName">Phone Number</label>
+<input class="form-control" id="phone_number" type="number" placeholder="Enter your Phone number" >
 </div>
 
 <div class="col-md-6">
 <label class="small mb-1" for="inputLocation">Location</label>
-<input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" >
+<input class="form-control" id="location" type="text" placeholder="Enter your location" >
 </div>
 </div>
 
@@ -114,11 +101,18 @@
       let last_name = document.getElementById("last_name");
       let email = document.getElementById("email");
       let username = document.getElementById("username");
+      let phone_num_2 = document.getElementById("phone_number");
+      let location_2 = document.getElementById("location");
+
 
       email.value = selectedUser["userEmail"];
       first_name.value = selectedUser["first_name"];
       last_name.value = selectedUser["last_name"];
       username.value = selectedUser["userName"];
+      phone_num_2.value = selectedUser["phone_num"];
+      location_2.value = selectedUser["location"];
+
+
 
       let pForm = document.getElementById("form_pro");
       pForm.addEventListener("submit", function (event) {
@@ -127,8 +121,10 @@
         let last_name = document.getElementById("last_name").value;
         let email = document.getElementById("email").value;
         let userName = document.getElementById("username").value;
+        let phone_num = document.getElementById("phone_number").value;
+        let location = document.getElementById("location").value;
 
-        let newData = { first_name, last_name, email, userName };
+        let newData = { first_name, last_name, email, userName,phone_num,location };
 
         let combinedData = Object.assign(selectedUser, newData);
         console.log(combinedData);
@@ -139,6 +135,7 @@
         fullArray[findIndex] = combinedData;
         localStorage.setItem("user_info", JSON.stringify(fullArray));
         alert("successfully changed");
+        window.open("/pages/company logo.html")
       });
 
       let delete_user = document.getElementById("delete");
@@ -182,5 +179,10 @@
       //   console.log(combineData);
       // });
     </script>
+                            
+<script type='text/javascript'>
+  (function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'fEdfoxM4XCqScdC9R_c', {});
+</script>
+                  
   </body>
 </html>
