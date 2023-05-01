@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Testimonials Section | CodingNepal</title>
+    <title>Review Section</title>
     <link rel="stylesheet" href="../Assests/css/reviews.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
     
-    <button class="edit-button"> <a href="../pages/editreview.html"> Edit </a></button>
-    <button class="add-button"> <a href="../pages/addreview.html"> Add </a></button>
+    <button class="edit-button"> <a href="../pages/editreview.html" > Edit </a></button>
+    <button class="add-button"  onclick="reviewChecker()"> <a href="" > Add </a></button>
 
     <div class="review-top"><h1>OUR REVIEWS</h1></div>
 
@@ -21,6 +21,30 @@
       
 
 <script>
+  
+  function reviewChecker(){
+        let checker = false;
+        let parseEmail = JSON.parse(localStorage.getItem("login_user"));
+        console.log(parseEmail)
+        let review = JSON.parse(localStorage.getItem("reviewObject"));
+        console.log(review)
+        let selectedUser = review.find(function (event) {
+        let emailValue = event["email"];
+        if (parseEmail == emailValue) {
+          
+          checker = true;
+
+        }
+        
+      });
+      if(checker == true){
+        alert("Your review limits exceeds...!!!")
+        } else {
+          window.open("/pages/addreview.html")
+        }
+      
+
+      }
 
 
 let review_list = [
@@ -97,6 +121,8 @@ for (let i = 0; i < review_list.length; i++) {
 
 
 
+
+      
 
 
 </script>

@@ -26,8 +26,8 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
-    <div class="hero">
+  <body  class="body" id="body" >
+    <div class="hero" id="blur">
       <nav>
         <h2 class="logo">INIFI<span class="span-1">NITI</span></h2>
         <ul>
@@ -47,7 +47,7 @@
               >Log In</a
             >
           </li>
-          <li><a href="./pages/profile.html">Profile</a></li>
+          <li><a href="" onclick="toggle()">Profile</a></li>
            
         </ul>
 
@@ -100,7 +100,9 @@
     </div>
 
     <!-- ABOUT US / LEARN MORE -->
-
+    <div class="popup" id="popup"><button id="close" onclick="toggle_2()" >&times;</button>
+      <h2>You Need to Login</h2>
+    </div>
     <section class="about" id="about-1">
       <div class="main">
         <img src="./Assests/images/undraw_interview_re_e5jn.svg" alt="" />
@@ -248,6 +250,7 @@
         </center>
       </div>
     </footer>
+    
 
     <script>
       (function (Q, R) {
@@ -281,7 +284,34 @@
       })(window, document);
 </script>
                         
-   
+
+<script>
+function toggle(){
+if(JSON.parse(localStorage.getItem("login_user")) == null){
+
+  event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+} else {
+  window.open("/pages/profile.html")
+}
+
+}
+function toggle_2(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
+
+</script>   
                       
 
   </body>
