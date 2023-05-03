@@ -53,7 +53,7 @@
 
        <button class="btn">  <a
           href=""
-          class="book-now" onclick="toggle_3()"
+          class="book-now" onclick="toggles()"
           >Book Now</a>
         </button>
         
@@ -102,6 +102,9 @@
     <!-- ABOUT US / LEARN MORE -->
     <div class="popup" id="popup"><button id="close" onclick="toggle_2()" >&times;</button>
       <h2>You Need to Login</h2>
+    </div>
+    <div class="popup_2" id="popup_2"><button id="close" onclick="toggle_5()" >&times;</button>
+      <h2>You Need to Complete your Profile</h2>
     </div>
     <section class="about" id="about-1">
       <div class="main">
@@ -310,9 +313,18 @@ popup.classList.toggle("active");
 let body_2 = document.getElementById("body")
 body_2.classList.remove("stop-scrolling");
 }
+function toggle_5(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup_2");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
 
 function toggle_3(){
-if(JSON.parse(localStorage.getItem("login_user")) == null){
+
 
   event.preventDefault();
 let blur = document.getElementById("blur");
@@ -321,11 +333,32 @@ let popup = document.getElementById("popup");
 popup.classList.toggle("active");
 let body = document.getElementById("body")
 body.classList.add("stop-scrolling");
-} else {
-  window.open("/pages/company logo.html")
-}
+} 
+
+
+
+function toggle_4(){
+  event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup_2");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
 }
 
+
+function toggles(){
+  if(JSON.parse(localStorage.getItem("login_user")) == null){
+  toggle_3();
+  } else if (JSON.parse(localStorage.getItem("profile_count")) == null){
+    toggle_4();
+  
+  } else{
+    window.open("/pages/company logo.html")
+  }
+
+}
 
 if(JSON.parse(localStorage.getItem("login_user")) != null){
   let item = document.getElementById("login_li");

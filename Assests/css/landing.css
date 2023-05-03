@@ -60,6 +60,42 @@ overflow-y: hidden;
   outline: none;
   cursor: pointer;
 }
+.popup_2{
+  background-color: #ffffff;
+  width: 420px;
+  height: 200px;
+  padding: 30px 40px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  /* display: none; */
+  visibility: hidden;
+  font-family: “Poppins”,sans-serif;
+  text-align: center;
+}
+#popup_2.active{
+/* display: block; */
+visibility: visible;
+transition: 0.5s;
+/* height: 100%; */
+overflow-y: hidden;
+}
+.popup_2 button{
+  display: block;
+  margin:  0 0 20px auto;
+  background-color: transparent;
+  font-size: 30px;
+  color: #ffffff;
+  background: #f9004d;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
 nav {
   display: flex;

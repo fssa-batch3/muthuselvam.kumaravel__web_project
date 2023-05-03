@@ -84,6 +84,8 @@
 	
 </script>
     <script>
+      let editted = false;
+      let profile_count = 0;
       // for email
       let oneUser = JSON.parse(localStorage.getItem("login_user"));
       // for array
@@ -108,15 +110,17 @@
       email.value = selectedUser["userEmail"];
       first_name.value = selectedUser["first_name"];
       last_name.value = selectedUser["last_name"];
-      username.value = selectedUser["userName"];
       phone_num_2.value = selectedUser["phone_num"];
       location_2.value = selectedUser["location"];
+      username.value = selectedUser["userName"];
 
 
 
       let pForm = document.getElementById("form_pro");
       pForm.addEventListener("submit", function (event) {
         event.preventDefault();
+        editted = true;
+        profile_count +=1;
         let first_name = document.getElementById("full_name").value;
         let last_name = document.getElementById("last_name").value;
         let email = document.getElementById("email").value;
@@ -134,6 +138,7 @@
         console.log(findIndex);
         fullArray[findIndex] = combinedData;
         localStorage.setItem("user_info", JSON.stringify(fullArray));
+        localStorage.setItem("profile_count", JSON.stringify(profile_count));
         alert("successfully changed");
         window.open("/pages/company logo.html")
       });
