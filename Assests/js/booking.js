@@ -55,6 +55,8 @@ const form = document.getElementById("231190591447457");
         let phoneNum = document.getElementById("input_31_full").value;
         let date = document.getElementById("date").value;
         let time = document.getElementById("time").value;
+        let booking_id = "#"+Math.floor(100000000 + Math.random() * 900000000);
+        let seat_num = "#"+Math.floor(1 + Math.random() * 8);
 
 
         
@@ -66,6 +68,8 @@ const form = document.getElementById("231190591447457");
           phonenum: phoneNum,
           date: date,
           time: time,
+          booking_id:booking_id,
+          seat_num:seat_num,
           uuid: Date.now()
         };
         bookingArray.push(bookingObject);

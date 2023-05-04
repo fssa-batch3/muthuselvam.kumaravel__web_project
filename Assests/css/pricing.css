@@ -1,20 +1,100 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
-
-body {
-  font-family: "poppins";
-  background: url(../images/rm251-aum-14.jpg);
-  background-repeat: no-repeat;
-  /* width: 100vh; */
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  /* background-color: rgb(25, 25, 25); */
-  /* background-blend-mode: multiply; */
-  background-color: #00385a;
-  overflow: hidden;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main {
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #353535;
+}
+.details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  /* background-color: #f9004d; */
+
+  /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  width: 1450px;
+  min-height: 820px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardHeader h2 {
+  font-weight: 600;
+  font-size: 50px;
+  color: #000;
+}
+
+.cardBox {
+  position: relative;
+  width: 100%;
+  /* padding: 20px; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 30px; */
+}
+
+.cardBox .card {
+  position: relative;
+  background: #f9004d;
+  width: 500px;
+  padding: 30px;
+  height: 400px;
+  margin-top: -150px;
+  border-radius: 20px;
+  line-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.orders h1{
+  visibility: hidden;
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.cardBox .card .cardName {
+  color: #000;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color:#000;
+}
+
+
+
+
+/* .main {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -152,4 +232,4 @@ body h1 {
   padding-top: 5px;
   padding-bottom: 26px;
   list-style: none;
-}
+} */

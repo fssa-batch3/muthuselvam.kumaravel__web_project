@@ -6,13 +6,21 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
         return true;
       }
     });
+    let logged_user = JSON.parse(localStorage.getItem("login_user"));
+    let fullarr = JSON.parse(localStorage.getItem("user_info"));
+    let findedArr = fullarr.find(function (event) {
+      let emailValue = event["email"];
+      if (logged_user == emailValue) {
+        return true;
+      }
+    });
 
     console.log(selectedUser);
 
-    document.getElementById("first_name").innerHTML = selectedUser["first_name"];
-    document.getElementById("last_name").innerHTML = selectedUser["last_name"];
-    document.getElementById("email").innerHTML = selectedUser["email"];
-    document.getElementById("phone_number").innerHTML = selectedUser["phone_num"];
+    document.getElementById("first_name").innerHTML = findedArr["first_name"];
+    document.getElementById("last_name").innerHTML = findedArr["last_name"];
+    document.getElementById("email").innerHTML = findedArr["email"];
+    document.getElementById("phone_number").innerHTML = findedArr["phone_num"];
     document.getElementById("date").innerHTML = selectedUser["date"];
     document.getElementById("time").innerHTML = selectedUser["time"];
 
@@ -22,7 +30,7 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
         event.preventDefault();
        
         alert("successfully completed");
-        // window.open("/pages/company logo.html")
+        window.open("/pages/finalconfirmation.html")
       });
 
 
