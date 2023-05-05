@@ -16,6 +16,14 @@
     
   </head>
   <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="">Booking History</a>
+      <a href="#">Login History</a>
+      <a href="#">Password</a>
+      <a href="#" id="logout" onclick="logout()">Logout</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer;margin-left:-370px;" onclick="openNav()">&#9776; Menu</span>
     <div class="container-xl px-4 mt-4">
 
 
@@ -158,6 +166,27 @@
         }
       });
 
+
+      function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
+let logout = document.getElementById("logout");
+      logout.addEventListener("click", function (event) {
+        event.preventDefault();
+        let msg = confirm("Are you sure you want to logout this account");
+        if (msg !== true) {
+          return;
+        } else {
+          localStorage.setItem("login_user", JSON.stringify(null));
+           window.location.href ="../index.html";
+        }
+      });
       // let email = document.getElementById("email");
       // let username = document.getElementById("username");
       // let password = document.getElementById("password");

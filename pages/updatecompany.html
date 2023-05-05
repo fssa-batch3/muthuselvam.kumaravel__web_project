@@ -16,8 +16,7 @@
           <label>company Innertitle<input type="text" id="cPrice" pattern="[A-Za-z0-9]{1,25}" required /></label>
           <label>image<input type="text" id="cImage" /></label>
           <label>Description<input type="textarea" id="cDescription" required/></label>
-          <label>Image Width<input type="text" id="cWidth" /></label>
-          <label>Image Height<input type="text" id="cHeight" /></label>
+          
           <button type="submit">ADD</button>
         </form>
       </div>
@@ -34,20 +33,19 @@
         let innertitle = document.getElementById("cPrice").value;
         let src = document.getElementById("cImage").value;
         let alt = document.getElementById("cDescription").value;
-        let width = document.getElementById("cWidth").value;
-        let height = document.getElementById("cHeight").value;
+        
 
         proObject = {
           title,
           innertitle,
           img: { src, alt },
-          width,
-          height,
+          
         };
         productArray.push(proObject);
         console.log(productArray);
         stringProduct = JSON.stringify(productArray);
         localStorage.setItem("proObject", stringProduct);
+        alert("successfully created")
       });
     </script>
   </body>

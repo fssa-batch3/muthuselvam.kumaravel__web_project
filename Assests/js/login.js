@@ -181,13 +181,11 @@ logIn.addEventListener("submit", (event) => {
   let password_log = document.getElementById("password").value;
 
   let isMatch = false;
+  if(email_log == "admin@gmail.com" && password_log == "admin"){
+    Notify.success("Logged In");
+  window.open("/pages/admincompany.html");
+  } else{
   for (let i = 0; i < defaultData.length; i++) {
-
-    if(email_log == "admin@gmail.com" && password_log == "admin"){
-      Notify.success("Logged In");
-    window.open("/pages/admincompany.html");
-    } else{
-
 
     if (
       email_log == defaultData[i]["userEmail"] &&
@@ -200,11 +198,10 @@ logIn.addEventListener("submit", (event) => {
         JSON.stringify(user_arr[0]["userEmail"])
       );
       break;
-    } else {
-      isMatch = false;
-    }
+    } 
+  
   }
-  }
+}
   if (isMatch === true) {
     Notify.success("Logged In");
     window.open("/pages/otpverify.html")

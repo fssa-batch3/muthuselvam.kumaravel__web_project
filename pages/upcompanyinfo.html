@@ -16,7 +16,7 @@
         <label>Image<input type="text" id="cImage" /></label>
         <label>Description<input type="textarea" id="cDescription" pattern="[A-Za-z0-9]{1,25}" required/></label>
         <button type="submit">SUBMIT</button>
-        <button type="submit" onclick="del()">DELETE</button>
+        <button  onclick="del()" id="delete">DELETE</button>
       </form>
     </div>
     <script>
@@ -60,15 +60,17 @@
         proObject = {
           title,
           innertitle,
-          image: { src, alt },
+          img: { src, alt },
         };
         let newObj = Object.assign(paraObj, proObject);
         parraArray[index] = newObj;
         alert("updated Successfully ");
         localStorage.setItem("proObject", JSON.stringify(parraArray));
-        window.location.href = "./admincompany.html";
+        window.location.href = "../pages/admincompany.html";
       });
-      function del() {
+      let delete_com = document.getElementById("delete");
+      delete_com.addEventListener("click", function (event) {
+        event.preventDefault();
         console.log(index);
         let check = confirm("Would you like to delete your account ");
         if (check == true) {
@@ -76,11 +78,11 @@
           let index = parraArray.indexOf(paraObj);
           parraArray.splice(index, 1);
           console.log(parraArray);
-          alert("ur account delete successfully");
+          alert("delete successfully");
           localStorage.setItem("proObject", JSON.stringify(parraArray));
-          window.location.href = "./admin.html";
+          window.location.href = "../pages/admincompany.html";
         }
-      }
+      });
     </script
   </body>
 </html>

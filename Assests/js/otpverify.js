@@ -28,7 +28,7 @@ let emailBody = `
     }).then(
       message => {
         if(message === "OK" ){
-            alert("OTP sent to your Email Address "+email_id.value);
+            // alert("OTP sent to your Email Address "+email_id.value);
            
         }
        
@@ -44,11 +44,14 @@ let emailBody = `
 
 function verifyOtp(){
     // let verify_btn = document.getElementById("OTP_btn")
+    let otp_verified =0 ;
+
     let getOtp = JSON.parse(localStorage.getItem("otp"));
     let otpverify = document.getElementById("otp_1").value+document.getElementById("otp_2").value+document.getElementById("otp_3").value+document.getElementById("otp_4").value;
 
     // verify_btn.addEventListener("submit",()=>{
         if (otpverify == getOtp){
+            otp_verified+=1;
             alert("Logged IN")
             window.open("/index.html")
         }
@@ -56,6 +59,9 @@ function verifyOtp(){
             alert("Invalid OTP")
         }
     console.log(otpverify)
+
+    let otp_verify = JSON.stringify(otp_verified)
+    localStorage.setItem("today_logged",otp_verify);
 
     
 }
