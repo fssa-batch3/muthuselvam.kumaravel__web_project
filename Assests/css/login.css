@@ -141,7 +141,13 @@ form div input {
   padding: 10px;
   outline: none;
 }
-
+.fa-eye{
+  position: absolute;
+  top: -3%;
+  right: 4%;
+  cursor: pointer;
+  color: lightgray;
+}
 #username:valid {
   border-color: green;
 }

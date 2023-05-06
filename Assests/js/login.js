@@ -8,6 +8,30 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
+const passwordInput = document.querySelector("#password")
+const eye = document.querySelector("#eye")
+eye.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput.setAttribute("type", type)
+})
+
+const passwordInput2 = document.querySelector("#password_1")
+const eye2 = document.querySelector("#eye2")
+eye2.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput2.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput2.setAttribute("type", type)
+})
+
+const passwordInput3 = document.querySelector("#password_2")
+const eye3 = document.querySelector("#eye3")
+eye3.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput3.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput3.setAttribute("type", type)
+})
+
 let validator = false;
 
 let parameters = {

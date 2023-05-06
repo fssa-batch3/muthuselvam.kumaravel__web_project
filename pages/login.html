@@ -9,6 +9,7 @@
     ></script>
     <link rel="stylesheet" href="../Assests/css/login.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src=" https://smtpjs.com/v3/smtp.js"></script>
     <title>Sign in & Sign up Form</title>
   </head>
@@ -37,6 +38,7 @@
                 maxlength="25"
                 required
               />
+              <i class="fa-solid fa-eye" id="eye"></i>
             </div>
             <!-- <div id=”strength-bar”></div> -->
             <button type="submit" class="btn solid" onclick="sendOtp()">Login</button>
@@ -95,6 +97,7 @@
                 pattern="^\S{8,25}\S"
                 required
               />
+              <i class="fa-solid fa-eye" id="eye2"></i>
               <small>Error Message</small>
             </div>
             <div id="strength-bar" ></div>
@@ -110,6 +113,8 @@
                 pattern="^\S{8,25}\S"
                 required
               />
+              <i class="fa-solid fa-eye" id="eye3"></i>
+
               <small>Error Message</small>
             </div>
             <button class="btn" type="submit">Sign up</button>
