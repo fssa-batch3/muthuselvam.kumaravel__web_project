@@ -13,12 +13,16 @@ let year_2 = tomorrow.getFullYear();
 
 let fullDate_2 = `${day_2}.${month_2}.${year_2}.`;
 
-function myfunction(){
+
+
+
+function dateFinder(){
 let x = document.getElementById("date");
 let option = document.createElement("option");
 option.text = fullDate;
 x.add(option);
-
+// document.getElementById("todayDate").text = fullDate;
+// document.getElementById("tomorrowDate").text = fullDate_2;
 let option_2 = document.createElement("option");
 option_2.text = fullDate_2;
 x.add(option_2);

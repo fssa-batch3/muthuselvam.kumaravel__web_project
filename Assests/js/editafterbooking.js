@@ -26,7 +26,7 @@ x.add(option_2);
 
 
     let oneUser = JSON.parse(localStorage.getItem("login_user"));
-    let fullArray = JSON.parse(localStorage.getItem("user_info"));
+    let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
     let selectedUser = fullArray.find(function (event) {
       let emailValue = event["email"];
       if (oneUser == emailValue) {
@@ -36,10 +36,10 @@ x.add(option_2);
 
     console.log(selectedUser)
 
-     document.getElementById("first_29").value = selectedUser["first_name"];
-     document.getElementById("last_29").value = selectedUser["last_name"];
+     document.getElementById("first_29").value = selectedUser["firstname"];
+     document.getElementById("last_29").value = selectedUser["lastname"];
      document.getElementById("input_30").value = selectedUser["email"];
-     document.getElementById("input_31_full").value = selectedUser["phone_num"];
+     document.getElementById("input_31_full").value = selectedUser["phonenum"];
 
 
 const form = document.getElementById("edit_form");

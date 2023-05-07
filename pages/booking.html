@@ -3,118 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Booking Form</title>
+    <title>Booking Form</title>
     <link rel="stylesheet" href="../Assests/css/booking.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    <style type="text/css">@media screen and (max-width:500px){
-      div ul li:nth-of-type(2){
-        display: block;
-      }
-    }  print{.form-section{display:inline}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.41386&themeRevisionID=5f30e2a790832f3e96009402"/>
-<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.41386" />
-<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.41386" />
-<script src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.41386" type="text/javascript"></script>
-<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.41386" type="text/javascript"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
-<script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.41386" type="text/javascript"></script>
-<script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.41386" type="text/javascript"></script>
-<script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.41386" type="text/javascript"></script>
-<script src="https://cdn03.jotfor.ms/js/payments/validategateways.js?v=3.3.41386" type="text/javascript"></script>
   </head>
   <body>
-    <div class="container">
-      <form class="jotform-form"  method="" name="form_231190591447457" id="231190591447457" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="231190591447457" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
-        <div role="main" class="form-all">
-          <ul class="form-section page-section">
-            <li id="cid_27" class="form-input-wide" data-type="control_head">
-              <div class="form-header-group  header-large">
-                <div class="header-text httal htvam">
-                  <h1 id="header_27" class="form-header" data-component="header">Reservation Form</h1>
-                  <div id="subHeader_27" class="form-subHeader">To reserve seats please complete and submit the below form.</div>
-                </div>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_fullname" id="id_29"><label class="form-label form-label-top form-label-auto" id="label_29" for="first_29"> Full Name<span class="form-required">*</span> </label>
-              <div id="cid_29" class="form-input-wide jf-required" data-layout="full">
-                <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_29" name="q29_fullName29[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_29 given-name" size="10" value="" data-component="first" aria-labelledby="label_29 sublabel_29_first" disabled /><label class="form-sub-label" for="first_29" id="sublabel_29_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_29" name="q29_fullName29[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_29 family-name" size="15" value="" data-component="last" aria-labelledby="label_29 sublabel_29_last" disabled /><label class="form-sub-label" for="last_29" id="sublabel_29_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_email" id="id_30"><label class="form-label form-label-top form-label-auto" id="label_30" for="input_30"> E-mail<span class="form-required">*</span> </label>
-              <div id="cid_30" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_30" name="q30_email30" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_30 sublabel_input_30" disabled /></span> </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_phone" id="id_31"><label class="form-label form-label-top form-label-auto" id="label_31" for="input_31_full"> Phone Number<span class="form-required">*</span> </label>
-              <div id="cid_31" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="tel" id="input_31_full" name="q31_phoneNumber31[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_31 tel-national" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_31" disabled /></span> </div>
-            </li>
-            <li class="form-line jf-required allowTime" data-type="control_datetime" id="id_15"><label class="form-label form-label-top form-label-auto" id="label_15" for="lite_mode_15"> Departure Date/Time<span class="form-required">*</span> </label>
-              <div id="cid_15" class="form-input-wide jf-required" data-layout="full">
-                <div data-wrapper-react="true" class="extended">
-                 <span class="form-sub-label-container" style="vertical-align:top"><select class="time-dropdown form-dropdown validate[required]" id="date" name="q15_departureDatetime15[ampm]" data-component="time-ampm" required="" aria-labelledby="label_15 sublabel_15_ampm" onclick="myfunction()">
-                  
-                </select><label class="form-sub-label" for="lite_mode_15" id="sublabel_15_litemode" style="min-height:13px" aria-hidden="false">Date</label></span><span class="allowTime-container timeAMPM">
-                    <div data-wrapper-react="true"><span class="form-sub-label-container hasAMPM" style="vertical-align:top"><select class="time-dropdown form-dropdown validate[required]" id="time" name="q15_departureDatetime15[ampm]" data-component="time-ampm" required="" aria-labelledby="label_15 sublabel_15_ampm">
-                      <option selected="" value="8.00">8.00</option>
-                      <option value="8.15">8.15</option>
-                      <option value="8.30">8.30</option>
-                      <option value="8.45">8.45</option>
-                      <option value="9.00">9.00</option>
-                      <option value="9.15">9.15</option>
-                      <option value="9.30">9.30</option>
-                      <option value="9.45">9.45</option>
-                      <option value="10.00">10.00</option>
-                      <option value="10.15">10.15</option>
-                      <option value="10.30">10.30</option>
-                      <option value="10.45">10.45</option>
-                      <option value="11.00">11.00</option>
-                      <option value="11.15">11.15</option>
-                      <option value="11.30">11.30</option>
-                      <option value="11.45">11.45</option>
-                      <option value="12.00">12.00</option>
-                      <option value="12.15">12.15</option>
-                      <option value="12.30">12.30</option>
-                      <option value="19.00">19.00</option>
-                      <option value="19.15">19.15</option>
-                      <option value="19.30">19.30</option>
-                      <option value="19.45">19.45</option>
-                      <option value="20.00">20.00</option>
-                      <option value="20.15">20.15</option>
-                      <option value="20.30">20.30</option>
-                      <option value="20.45">20.45</option>
-                      <option value="21.00">21.00</option>
-                    </select><label data-seperate-translate="true" class="form-sub-label" for="input_15_timeInput" id="sublabel_15_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label></span><span class="form-sub-label-container" style="vertical-align:top"></span></div>
-                  </span>
-                </div>
-              </div>
-            </li>
-            
-           
-            
-           
-            <li class="form-line" data-type="control_textarea" id="id_24"><label class="form-label form-label-top form-label-auto" id="label_24" for="input_24"> Additional Message: </label>
-              <div id="cid_24" class="form-input-wide" data-layout="full"> <textarea id="input_24" class="form-textarea" name="q24_additionalMessage" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_24"></textarea> </div>
-            </li>
-            <li class="form-line" data-type="control_button" id="id_1">
-              <div id="cid_1" class="form-input-wide" data-layout="full">
-                <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button id="input_1" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
-              </div>
-            </li>
-           
-          </ul>
+      
+   
+   <form  id="231190591447457" >
+    <div id="main">
+            <div id="main_2">
+              <h1 id="header_1" >Reservation Form </h1>
+              <div  id="subHeader_1"  style="color: #57647e;">To reserve seats please complete and submit the below form.</div>
+            </div>
+         <hr>
+
+        <div>
+       <label id="label_8" > Name<span >*</span> </label>
+         
+            <div ><input type="text" id="first_29"><label id="sublabel_8_first" style="min-height:13px" >First Name</label> <div id="last_name"> <input type="text" id="last_29"> <label  id="sublabel_8_first" style="min-height:13px" >Last Name</label></div></div></div>
+          
+      <div class="email-top">
+        <label  id="label_6" > E-mail<span >*</span> </label>
+          <div id="cid_6" ><input type="email" id="input_30" > </div>
+      </div>
+          <div >
+            <label  id="label_6" > Phone Number<span >*</span> </label>
+              <div id="cid_6" ><input type="number" id="input_31_full" > </div>
+          </div>
+    <div id="departure">
+       <label  id="label_6" >Departure Date/Time <span >*</span> </label>
+          <div id="cid_7" > <select  id="date" onclick="dateFinder()">
+           </select> <label class="date">Date</label> </div>
+          <div id="cid_7" > <select  id="time" >     
+               <option selected="" value="8.00">8.00</option>
+            <option value="8.15">8.15</option>
+            <option value="8.30">8.30</option>
+            <option value="8.45">8.45</option>
+            <option value="9.00">9.00</option>
+            <option value="9.15">9.15</option>
+            <option value="9.30">9.30</option>
+            <option value="9.45">9.45</option>
+            <option value="10.00">10.00</option>
+            <option value="10.15">10.15</option>
+            <option value="10.30">10.30</option>
+            <option value="10.45">10.45</option>
+            <option value="11.00">11.00</option>
+            <option value="11.15">11.15</option>
+            <option value="11.30">11.30</option>
+            <option value="11.45">11.45</option>
+            <option value="12.00">12.00</option>
+            <option value="12.15">12.15</option>
+            <option value="12.30">12.30</option>
+            <option value="19.00">19.00</option>
+            <option value="19.15">19.15</option>
+            <option value="19.30">19.30</option>
+            <option value="19.45">19.45</option>
+            <option value="20.00">20.00</option>
+            <option value="20.15">20.15</option>
+            <option value="20.30">20.30</option>
+            <option value="20.45">20.45</option>
+            <option value="21.00">21.00</option>
+          </select> <label class="date">Hour Minutes</label> </div>      
+
         </div>
+
+          
+       
+
+          <hr id="second" > 
+
+          <div id="cid_2" >
+            
+            <button id="input_2" type="submit" >Submit</button>
+          </div>
         
+          
        
         
-      </form>
-    </div>
+        </div>
+    
+   
+   
+    
+   
+  </form>
     <script src="../Assests/js/booking.js"></script>
   </body>
 </html>

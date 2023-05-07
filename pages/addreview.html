@@ -44,46 +44,46 @@
     
    
    
-    <script type="text/javascript">
-  
-      let parseEmail = JSON.parse(localStorage.getItem("login_user"))
-  
-     
-  document.getElementById("input_7").value = new Date().toLocaleDateString();
-  document.getElementById("input_6").value = parseEmail;
-  const form = document.getElementById("231025735507451");
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          let reviewArray = [];
-          if (localStorage.getItem("reviewObject") != null) {
-            reviewArray = JSON.parse(localStorage.getItem("reviewObject"));
-          }
-          let para = document.getElementById("input_4").value;
-          let name = document.getElementById("first_8").value;
-          let lastname = document.getElementById("last_8").value;
-          let email = document.getElementById("input_6").value;
-          let date = document.getElementById("input_7").value;
-          
-  
-          reviewObject = {
-            para,
-            name,
-            date,
-            email,
-            lastname,
-          };
-          reviewArray.push(reviewObject);
-          console.log(reviewArray);
-          stringProduct = JSON.stringify(reviewArray);
-          localStorage.setItem("reviewObject", stringProduct);
-          alert("submitted");
-          window.open("/pages/reviews.html")
-        });
-  
-    </script>
+    
    
   </form>
+  <script type="text/javascript">
   
+    let parseEmail = JSON.parse(localStorage.getItem("login_user"))
+
+   
+document.getElementById("input_7").value = new Date().toLocaleDateString();
+document.getElementById("input_6").value = parseEmail;
+const form = document.getElementById("231025735507451");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let reviewArray = [];
+        if (localStorage.getItem("reviewObject") != null) {
+          reviewArray = JSON.parse(localStorage.getItem("reviewObject"));
+        }
+        let para = document.getElementById("input_4").value;
+        let name = document.getElementById("first_8").value;
+        let lastname = document.getElementById("last_8").value;
+        let email = document.getElementById("input_6").value;
+        let date = document.getElementById("input_7").value;
+        
+
+        reviewObject = {
+          para,
+          name,
+          date,
+          email,
+          lastname,
+        };
+        reviewArray.push(reviewObject);
+        console.log(reviewArray);
+        stringProduct = JSON.stringify(reviewArray);
+        localStorage.setItem("reviewObject", stringProduct);
+        alert("submitted");
+        window.open("/pages/reviews.html")
+      });
+
+  </script>
 </body>
 </html>
 

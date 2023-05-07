@@ -20,7 +20,7 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
     console.log(selectedUser);
 
     document.getElementById("first_name").innerHTML = findedArr["first_name"];
-    document.getElementById("last_name").innerHTML = findedArr["last_name"];
+    document.getElementById("second_name").innerHTML = findedArr["last_name"];
     document.getElementById("email").innerHTML = findedArr["email"];
     document.getElementById("phone_number").innerHTML = findedArr["phone_num"];
     document.getElementById("date").innerHTML = selectedUser["date"];
