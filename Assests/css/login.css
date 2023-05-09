@@ -339,7 +339,7 @@ form div input {
 
 .right-panel .image,
 .right-panel .content {
-  transform: translateX(1100px);
+  transform: translateY(1100px);
 }
 
 /* ANIMATION */
@@ -351,7 +351,7 @@ form div input {
 
 .container.sign-up-mode .left-panel .image,
 .container.sign-up-mode .left-panel .content {
-  transform: translateX(-800px);
+  transform: translateY(-800px);
 }
 
 .container.sign-up-mode .signin-signup {

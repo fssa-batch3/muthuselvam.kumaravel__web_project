@@ -9,14 +9,24 @@
 function sendOtp(){
     let email_id = document.getElementById("email");
     // let otpverify = document.getElementById("otp_1").value+document.getElementById("otp_2").value+document.getElementById("otp_3").value+document.getElementById("otp_4").value;
-    
-let otp_value = Math.floor(Math.random()*10000);
-let set_otp = JSON.stringify(otp_value)
+    const possibleChars = "0123456789";
+
+  // Initialize an empty string to store the OTP
+  let OTP = "";
+
+  // Generate a random 4-digit number by picking a random character from the possibleChars string four times
+  for (let i = 0; i < 4; i++) {
+    OTP += possibleChars.charAt(
+      Math.floor(Math.random() * possibleChars.length)
+    );
+  }
+
+let set_otp = JSON.stringify(OTP)
 localStorage.setItem("otp",set_otp)
 
 let emailBody = `
    <h1>INFINITI Booking OTP Verfication</h1> <br>
-   <h2>Your OTP Code is</h2>${otp_value}
+   <h2>Your OTP Code is</h2>${OTP}
 `;
 
     Email.send({

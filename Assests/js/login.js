@@ -122,6 +122,8 @@ form.addEventListener("submit", function (event) {
       userPassword: password,
       userConpass: conpassword,
       userName: username,
+      
+
       u_id,
     };
     for (let i = 0; i < userArr.length; i++) {

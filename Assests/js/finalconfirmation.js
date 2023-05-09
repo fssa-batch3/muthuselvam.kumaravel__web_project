@@ -21,15 +21,15 @@ console.log(selectedUser);
 
     
 
-
-    document.getElementById("first_name").innerHTML = selectedUser["first_name"];
-    document.getElementById("last_name").innerHTML = selectedUser["last_name"];
-    document.getElementById("email").innerHTML = selectedUser["email"];
-    document.getElementById("phone_number").innerHTML = selectedUser["phone_num"];
-    document.getElementById("date").innerHTML = findedarr["date"];
-    document.getElementById("time").innerHTML = findedarr["time"];
-    document.getElementById("booking_id").innerHTML = findedarr["booking_id"];
-    document.getElementById("seat_number").innerHTML = findedarr["seat_num"];
+    document.getElementById("company_name").innerText = "FRESHWORKS"
+    document.getElementById("first_name").innerText = selectedUser["first_name"];
+    document.getElementById("last_name").innerText = selectedUser["last_name"];
+    document.getElementById("email").innerText = selectedUser["email"];
+    document.getElementById("phone_number").innerText = selectedUser["phone_num"];
+    document.getElementById("date").innerText = findedarr["date"];
+    document.getElementById("time").innerText = findedarr["time"];
+    document.getElementById("booking_id").innerText = findedarr["booking_id"];
+    document.getElementById("seat_number").innerText = findedarr["seat_num"];
 
 
 
