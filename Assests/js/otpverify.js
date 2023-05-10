@@ -3,7 +3,7 @@
  
 
 
-
+// alert("Your OTP verification code has been sent to " + JSON.parse(localStorage.getItem("login_user")))
 
 
 function sendOtp(){

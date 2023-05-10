@@ -11,6 +11,13 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+.g-signin2{
+  background-color: #f9000d;
+  margin-top: 30px;
+  
+
+}
+
 .container {
   position: relative;
   width: 100%;

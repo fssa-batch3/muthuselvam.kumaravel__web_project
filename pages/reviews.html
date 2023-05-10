@@ -13,6 +13,9 @@
     <button class="add-button" onclick="reviewChecker()"> <a href="../pages/addreview.html" > Add </a></button>
 
     <div class="review-top"><h1>OUR REVIEWS</h1></div>
+    <div class="popup" id="popup"><button id="close" onclick="toggle_2()" >&times;</button>
+      <h2>You Need to Login</h2>
+    </div>
 
     <div class="wrapper">
      
@@ -21,8 +24,31 @@
       
 
 <script>
+
+function toggle_2(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
+
+function toggle_3(){
+
+
+event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+} 
   
   function reviewChecker(){
+    
         let checker = false;
         let parseEmail = JSON.parse(localStorage.getItem("login_user"));
         console.log(parseEmail)

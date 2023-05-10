@@ -45,6 +45,21 @@ body {
   font-size: 50px;
   color: #000;
 }
+#t_head{
+  position: relative;
+  top: 30px;
+  left: 50px;
+  font-size: 26px;
+  color: #fff;
+}
+
+#t_body{
+  position: relative;
+  top: 20px;
+  left: 50px;
+  font-size: 26px;
+  color: #fff;
+}
 
 .cardBox {
   position: relative;
@@ -55,6 +70,13 @@ body {
   /* grid-gap: 30px; */
 }
 
+#recent_book{
+  width: 1400px;
+  height: 200px;
+  margin-top: -320px;
+  background-color: #f9004d;
+  border-radius: 10px;
+}
 .cardBox .card {
   position: relative;
   background: #f9004d;

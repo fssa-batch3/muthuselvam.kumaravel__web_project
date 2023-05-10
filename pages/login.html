@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="152776570820-3fi9kjn4vc40juhi7845iq2gbvt45nn3.apps.googleusercontent.com">
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
@@ -43,20 +44,7 @@
             <!-- <div id=”strength-bar”></div> -->
             <button type="submit" class="btn solid" onclick="sendOtp()">Login</button>
             <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
           </form>
 
           <!-- sign in -->
@@ -133,6 +121,7 @@
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
+            
           </form>
         </div>
       </div>
@@ -161,7 +150,8 @@
     <script src="../Assests/js/login.js"></script>
     <script src="../Assests/js/otpverify.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"> </script>
-                            
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type='text/javascript'>
   (function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'fEdfoxM4XCqScdC9R_c', {});
 </script>

@@ -45,7 +45,14 @@ x.add(option_2);
 const form = document.getElementById("edit_form");
       form.addEventListener("submit", function (event) {
         event.preventDefault();
-       
+        let e = document.getElementById("date").value;
+      console.log(e.length)
+      let e_2 = document.getElementById("time").value;
+      console.log(e_2.length)
+        if(e.length == 0 || e_2.length == 0){
+          alert("Please Enter Your Date and Time");
+          return;
+        }
         let firstName = document.getElementById("first_29").value;
         let lastName = document.getElementById("last_29").value;
         let email = document.getElementById("input_30").value;

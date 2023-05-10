@@ -253,22 +253,6 @@
           height: "180",
         },
       ];
-      //       <-- card 1-->
-
-      //  <div class="card">
-      //     <div class="imgbx">
-      //       <img
-      //         src="../Assests/images/freshworks2-removebg-preview.png"
-      //         alt=""
-      //         height="200"
-      //         width="200"
-      //       />
-      //     </div>
-      //     <div class="contentbx">
-      //       <h3>Freshworks</h3>
-      //       <a href="calendar.html" class="freshworks">Book</a>
-      //     </div>
-      // </div>
 
       const arr = JSON.parse(localStorage.getItem("proObject"));
       for (let i = 0; i < arr.length; i++) {
@@ -294,8 +278,8 @@
         img_card = document.createElement("img");
         console.log(company_logo[i]);
         img_card.setAttribute("src", company_logo[i].img["src"]);
-        img_card.setAttribute("width", "100%");
-        img_card.setAttribute("height", "100%");
+        img_card.setAttribute("width", "80%");
+        img_card.setAttribute("height", "80%");
         img_card.setAttribute("alt", company_logo[i].img["alt"]);
         div_imgbx.append(img_card);
 

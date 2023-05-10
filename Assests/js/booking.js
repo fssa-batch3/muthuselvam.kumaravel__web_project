@@ -3,7 +3,7 @@ let day = date.getDate();
 let month = date.getMonth()+1;
 let year = date.getFullYear();
 
-let fullDate = `${day}.${month}.${year}.`;
+let fullDate = `${day}.${month}.${year}`;
 
 let tomorrow = new Date();
 tomorrow.setDate(date.getDate() + 1);
@@ -11,7 +11,7 @@ let day_2 = tomorrow.getDate();
 let month_2 = tomorrow.getMonth()+1;
 let year_2 = tomorrow.getFullYear();
 
-let fullDate_2 = `${day_2}.${month_2}.${year_2}.`;
+let fullDate_2 = `${day_2}.${month_2}.${year_2}`;
 
 
 
@@ -19,11 +19,13 @@ let fullDate_2 = `${day_2}.${month_2}.${year_2}.`;
 function dateFinder(){
 let x = document.getElementById("date");
 let option = document.createElement("option");
+option.value = fullDate;
 option.text = fullDate;
 x.add(option);
 // document.getElementById("todayDate").text = fullDate;
 // document.getElementById("tomorrowDate").text = fullDate_2;
 let option_2 = document.createElement("option");
+option_2.value = fullDate_2
 option_2.text = fullDate_2;
 x.add(option_2);
 }
@@ -47,8 +49,20 @@ x.add(option_2);
 
 
 const form = document.getElementById("231190591447457");
+
+    
+
+      
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+        let e = document.getElementById("date").value;
+      console.log(e.length)
+      let e_2 = document.getElementById("time").value;
+      console.log(e_2.length)
+        if(e.length == 0 || e_2.length == 0){
+          alert("Please Enter Your Date and Time");
+          return;
+        }
         let bookingArray = [];
         if (localStorage.getItem("bookingObject") != null) {
           bookingArray = JSON.parse(localStorage.getItem("bookingObject"));

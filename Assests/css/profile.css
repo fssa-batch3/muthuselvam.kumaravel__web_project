@@ -1,9 +1,18 @@
 body{
-  margin-top:20px;
-  background-color:#f2f6fc;
+  /* margin-top:20px; */
+  /* background-color:#f2f6fc; */
+  background-image: url(../images/Untitled.jpeg);
+  background-color: rgba(112, 112, 112, 0.78);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   color:#69707a;
   margin-left: 400px;
   }
+
+
   .img-account-profile {
       height: 10rem;
   }
@@ -12,12 +21,45 @@ body{
   }
   .card {
       box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+      border: #000;
   }
   .card .card-header {
       font-weight: 500;
+      color: #f9004d;
+      background-color: #000;
+      font-size: 28px;
   }
   .card-header:first-child {
       border-radius: 0.35rem 0.35rem 0 0;
+  }
+
+  .btn_save{
+    background-color: #8de02c;
+    color: #000;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    margin-left: 490px;
+  }
+
+  .btn_save:hover{
+    background-color: #65a11f;
+color: #000;
+  }
+
+  .btn_delete{
+    background-color: #f00	;
+    color: #000;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+  }
+
+  .btn_delete:hover{
+    background-color:rgb(189, 0, 0)	;
+color: #000;
   }
   .card-header {
       padding: 1rem 1.35rem;
@@ -67,7 +109,7 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #0061f2;
+    background-color: #000;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -79,13 +121,13 @@ body{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #000;
+    color: #f9004d;
     display: block;
     transition: 0.3s;
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    color: #b10038da;
   }
   
   .sidenav .closebtn {
