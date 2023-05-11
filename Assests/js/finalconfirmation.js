@@ -1,3 +1,11 @@
+let printBtn = document.getElementById("print");
+
+    printBtn.addEventListener('click',function(){
+      window.print();
+    })
+
+
+
 let oneUser = JSON.parse(localStorage.getItem("login_user"));
     let fullArray = JSON.parse(localStorage.getItem("user_info"));
     let selectedUser = fullArray.find(function (event) {
@@ -33,3 +41,5 @@ console.log(selectedUser);
 
 
 
+
+    

@@ -67,13 +67,61 @@ li[data-type="control_image"] {
 
 .buttonClass a {
     text-decoration: none;
+    color: #fff;
+}
+.buttonClass_2 {
+    position: absolute;
+    top: 300px;
+    right: 100px;
+  font-size:15px;
+  font-family:Arial;
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color:#fff;
+  border-color:#0b0e07;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  box-shadow:inset 0px -3px 7px 0px #29bbff;
+  text-shadow:inset 0px 1px 0px #263666;
+  background:linear-gradient(#2dabf9, #0688fa);
+}
+
+.buttonClass_2:hover {
+  background: linear-gradient(#0688fa, #2dabf9);
+}
+
+
+.buttonClass_2 a {
+    text-decoration: none;
+}
+
+@media print{
+  body *{
+    display: block;
+  }
+  
+  .buttonClass{
+    display: none;
+  }
+
+  .buttonClass_2{
+    display: none;
+  }
+  #img-confirm{
+    display: none;
+  }
+  
+ 
 }
               
 </style>
 </head>
 <body>
 <form class="jotform-form" action="" method="post" name="form_231223680998464" id="231223680998464" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="231223680998464" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
-  <div role="main" class="form-all">
+  <div role="main" class="form-all" id="main">
     <ul class="form-section page-section">
       <li class="form-line form-line-column form-col-1" data-type="control_image" id="id_66">
         <div id="cid_66" class="form-input-wide" data-layout="full"> <img alt="Image" loading="lazy" class="form-image" style="border:0" src="../Assests/images/INIFINITI (1).png" tabindex="0" height="60px" width="250px" data-component="image" /> </div>
@@ -82,7 +130,7 @@ li[data-type="control_image"] {
         <div id="cid_67" class="form-input-wide" data-layout="full">
           <div id="text_67" class="form-html" data-component="text" tabindex="0">
             <div style="line-height:18px;text-align:right;padding-top:24px;">
-              <div style="font-size:12pt;"><strong>INFINITI SHUTTLE SERVICE</strong></div>
+              <div style="font-size:12pt;"><strong>INFINITI SHUTTLE SERVICE</strong></div>
               <div style="font-size:10pt;"> Global Infocity, Chennai, IN, 600028</div>
               <div style="line-height:14px;">
                 <div style="font-size:8pt;">customercare@globalinfocity.com</div>
@@ -100,7 +148,7 @@ li[data-type="control_image"] {
                 <div id="cid_30" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top;"><h3 id="company_name"></h3></span> </div>
               </li>
               <div class="confirm_img">
-              <img src="../Assests/images/istockphoto-1371148606-612x612.jpg" alt="" width="250" height="250">
+              <img src="../Assests/images/istockphoto-1371148606-612x612.jpg" alt="" width="250" height="250" id="img-confirm">
             </div>
             <li class="form-line jf-required" data-type="control_email" id="id_30"><label class="form-label form-label-top form-label-auto" id="label_30" for="input_30"> Booking ID </label>
                 <div id="cid_30" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top;"><h3 id="booking_id"></h3></span> </div>
@@ -126,9 +174,7 @@ li[data-type="control_image"] {
                       <div data-wrapper-react="true"><span class="form-sub-label-container hasAMPM" style="vertical-align:top"><h3 id="time"></h3><label data-seperate-translate="true" class="form-sub-label" for="input_15_timeInput" id="sublabel_15_hour" style="min-height:13px" aria-hidden="false">Hour Minutes</label></span><span class="form-sub-label-container" style="vertical-align:top"></span></div>
                     </span>
                   </div>
-  <div class="form-header-group  header-large">
-
-                </div>
+  
 
               </li>
 
@@ -168,11 +214,13 @@ li[data-type="control_image"] {
   </div>
 
   
- <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231223680998464" />
+ 
   
  
 </form>
 
 <button class="buttonClass"  > <a href="../index.html"> Continue</a></button>
+<button id="print" class="buttonClass_2"  >  Print</button>
+
 <script src="../Assests/js/finalconfirmation.js"></script></body>
 </html>

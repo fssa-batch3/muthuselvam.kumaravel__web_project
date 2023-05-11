@@ -79,3 +79,11 @@ form button.active {
 form button:hover {
   background: #f9004d;
 }
+
+
+#wrongEmail{
+  text-decoration: none;
+  color: #f9004d;
+  padding-left: 82px;
+  padding-top: 10px;
+}
