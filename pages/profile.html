@@ -102,11 +102,14 @@
 
       function onSuccess(position){
         let {latitude,longitude} = position.coords;
+        console.log(latitude,longitude)
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=17c1eec5fda94044a4f259c7dec24978`)
         .then(Response => Response.json()).then(result => {
           let allDetails = result.results[0].components;
-          let {suburb}= allDetails
-          input_location.value=`${suburb}`;
+          let {city_district}= allDetails
+          console.log(result)
+          console.log(allDetails)
+          input_location.value=`${city_district}`;
         })
         
       }
