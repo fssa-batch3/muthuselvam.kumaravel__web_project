@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+}
+
 body {
   background-color: #242333;
   color: #fff;
@@ -20,6 +24,12 @@ body {
   margin: 20px 0;
 }
 
+.movie-container h2{
+  color: #fff;
+}
+
+
+
 .movie-container select {
   background-color: #f9004d;
   border: 0;
@@ -33,6 +43,11 @@ body {
   
 }
 
+
+body .time{
+  font-size: 20px;
+  color: #fff;
+}
 .container {
   perspective: 1000px;
   margin-bottom: 30px;
@@ -43,7 +58,8 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  margin-top: 80px;
+  /* margin-top: 0px; */
+  padding: 90px;
 }
 
 .seat {
@@ -91,6 +107,7 @@ body {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  margin-top: 200px;
 }
 
 .showcase li {
@@ -114,13 +131,73 @@ gap: 10px;
 z-index: 2;
 }
 
-
+.count{
+  background-color: #fff;
+  width: 500px;
+  height: 100px;
+}
 
 
 p.text{
     margin: 5px 0;
+    position: absolute;
+    top: 500px;
+    left: 1050px;
+    font-weight: 800;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+p{
+  font-size: 25px;
+}
+
+
+
+h3{
+  position: absolute;
+  left: 100px;
+  top: 470px;
+  font-size: 30px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+#time_slot{
+  position: absolute;
+  left: 150px;
+  top: 520px;
+  font-size: 50px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  color: #f9004d;
+}
+
+p  a{
+  margin-top: 20px;
+  margin-left: -40px;
+  font-size: 26px;
+  color: #fff;
+  background-color: #f9004d;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+}
+p  a:hover{
+  color: #d1d1d1;
+  background-color: #b9003b;
+  
 }
 
 p.text span{
-    color: rgb(158, 248, 158);
+    color:#f9004d;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 150px;
+    font-size: 80px;
 }

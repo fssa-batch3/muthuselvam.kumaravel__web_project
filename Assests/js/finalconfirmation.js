@@ -17,16 +17,25 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
 
     let login_email = JSON.parse(localStorage.getItem("login_user"));
     let total_arr = JSON.parse(localStorage.getItem("bookingObject"));
-    let findedarr = total_arr.find(function (event) {
+    let findedarr = total_arr.filter(function (event) {
       let emailValue = event["email"];
       if (login_email == emailValue) {
         return true;
       }
     });
 
+    let logged_in = JSON.parse(localStorage.getItem("login_user"));
+    let seat_already = JSON.parse(localStorage.getItem("seat_booking"));
+    let seat_num = seat_already.filter(function (event) {
+      let emailValue = event["login_email"];
+      if (logged_in == emailValue) {
+        return true;
+      }
+    });
+
 console.log(findedarr);
 console.log(selectedUser);
-
+console.log(seat_num)
     
 
     document.getElementById("company_name").innerText = "FRESHWORKS"
@@ -34,10 +43,10 @@ console.log(selectedUser);
     document.getElementById("last_name").innerText = selectedUser["last_name"];
     document.getElementById("email").innerText = selectedUser["email"];
     document.getElementById("phone_number").innerText = selectedUser["phone_num"];
-    document.getElementById("date").innerText = findedarr["date"];
-    document.getElementById("time").innerText = findedarr["time"];
-    document.getElementById("booking_id").innerText = findedarr["booking_id"];
-    document.getElementById("seat_number").innerText = findedarr["seat_num"];
+    document.getElementById("date").innerText = findedarr[findedarr.length-1]["date"];
+    document.getElementById("time").innerText = findedarr[findedarr.length-1]["time"];
+    document.getElementById("booking_id").innerText = findedarr[findedarr.length-1]["booking_id"];
+    document.getElementById("seat_number").innerText ="#"+ seat_num[seat_num.length-1]["count"];
 
 
 
