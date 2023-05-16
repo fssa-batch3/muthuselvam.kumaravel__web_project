@@ -15,7 +15,7 @@
         <i class="bx bxs-check-shield"></i>
       </header>
       <h4>Enter OTP Code</h4>
-      <form action="#" id="verify_otp">
+      <form id="verify_otp">
         <div class="input-field">
           <input type="number" id="otp_1" />
           <input type="number"  id="otp_2" disabled />
@@ -23,13 +23,14 @@
           <input type="number"  id="otp_4" disabled />
         </div>
         <a id="wrongEmail" href="../pages/login.html">Wrong Email?</a>
-        <button id="OTP_btn"  onclick="verifyOtp()">Verify OTP</button>
+        <button type="submit" id="OTP_btn" >Verify OTP</button>
+        <!-- onclick="verifyOtp()" -->
       </form>
     </div>
     <script src="../Assests/js/otpverify.js" defer></script>
     <script src="../Assests/js/otpvalidation.js"></script>
     <script>
-      alert("Your OTP verification code has been sent to " + document.getElementById("email").value)
+      // alert("Your OTP verification code has been sent to " + document.getElementById("email").value)
     </script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 let date = new Date()
 let day = date.getDate();
 let month = date.getMonth()+1;
@@ -16,21 +18,28 @@ let fullDate_2 = `${day_2}.${month_2}.${year_2}`;
 
 
 
-function dateFinder(){
+
 let x = document.getElementById("date");
 let option = document.createElement("option");
+option.setAttribute("id", "today_date")
 option.value = fullDate;
 option.text = fullDate;
 x.add(option);
-// document.getElementById("todayDate").text = fullDate;
-// document.getElementById("tomorrowDate").text = fullDate_2;
+
 let option_2 = document.createElement("option");
+option_2.setAttribute("id", "tomorrow_date")
 option_2.value = fullDate_2
 option_2.text = fullDate_2;
 x.add(option_2);
-}
 
 
+let d = new Date(),
+    h = (d.getHours()<10?'0':'') + d.getHours(),
+    m = (d.getMinutes()<10?'0':'') + d.getMinutes();
+  current_time =  h + ':' + m;
+
+
+  
     let oneUser = JSON.parse(localStorage.getItem("login_user"));
     let fullArray = JSON.parse(localStorage.getItem("user_info"));
     let selectedUser = fullArray.find(function (event) {
@@ -62,6 +71,12 @@ const form = document.getElementById("231190591447457");
         if(e.length == 0 || e_2.length == 0){
           alert("Please Enter Your Date and Time");
           return;
+        } 
+        if(e == fullDate){
+          if (e_2 < current_time){
+            alert("Enter a valid Hours and Minutes");
+            return
+          }
         }
         let bookingArray = [];
         if (localStorage.getItem("bookingObject") != null) {
@@ -94,7 +109,7 @@ const form = document.getElementById("231190591447457");
         console.log(bookingArray);
         stringProduct = JSON.stringify(bookingArray);
         localStorage.setItem("bookingObject", stringProduct);
-        alert("submitted");
-        window.open("/pages/afterbooking.html");
+        alert("Successfully Booked");
+        window.location.href = "../pages/afterbooking.html";
 
       });

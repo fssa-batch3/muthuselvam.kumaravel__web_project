@@ -17,14 +17,14 @@
       </li>
       <li class="form-line jf-required" data-type="control_fullname" id="id_8"><label class="form-label form-label-top form-label-auto" id="label_8" for="first_8"> Name<span class="form-required">*</span> </label>
         <div id="cid_8" class="form-input-wide jf-required" data-layout="full">
-          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_8" name="q8_name[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 given-name" size="10" value="" data-component="first" aria-labelledby="label_8 sublabel_8_first" required="" /><label class="form-sub-label" for="first_8" id="sublabel_8_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_8" name="q8_name[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 family-name" size="15" value="" data-component="last" aria-labelledby="label_8 sublabel_8_last" required="" /><label class="form-sub-label" for="last_8" id="sublabel_8_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
+          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top" data-input-type="first"><input type="text" id="first_8" name="q8_name[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 given-name" size="10" value="" data-component="first" aria-labelledby="label_8 sublabel_8_first" required=""  /><label class="form-sub-label" for="first_8" id="sublabel_8_first" style="min-height:13px" aria-hidden="false">First Name</label></span><span class="form-sub-label-container" style="vertical-align:top" data-input-type="last"><input type="text" id="last_8" name="q8_name[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_8 family-name" size="15" value="" data-component="last" aria-labelledby="label_8 sublabel_8_last" required=""  /><label class="form-sub-label" for="last_8" id="sublabel_8_last" style="min-height:13px" aria-hidden="false">Last Name</label></span></div>
         </div>
       </li>
       <li class="form-line jf-required" data-type="control_email" id="id_6"><label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> E-mail<span class="form-required">*</span> </label>
-        <div id="cid_6" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_6" name="q6_email6" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" disabled data-component="email" aria-labelledby="label_6 sublabel_input_6" required="" /></span> </div>
+        <div id="cid_6" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input  type="email" id="input_6" name="q6_email6"  class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value=""  data-component="email" aria-labelledby="label_6 sublabel_input_6" required="" disabled /></span> </div>
       </li>
       <li class="form-line jf-required" data-type="control_email" id="id_7"><label class="form-label form-label-top form-label-auto" id="label_6" for="input_7">Date </label>
-        <div id="cid_7" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text"  id="input_7" disabled name="q6_email6" class="form-textbox validate[required, Date]" data-defaultvalue="" style="width:310px" size="310" value=""  data-component="date" aria-labelledby="label_6 sublabel_input_6"  required="" /></span> </div>
+        <div id="cid_7" class="form-input-wide jf-required" data-layout="half"> <span class="form-sub-label-container" style="vertical-align:top"><input type="text"  id="input_7" disabled name="q6_email6" class="form-textbox validate[required, Date]" data-defaultvalue="" style="width:310px" size="310" value=""  data-component="date" aria-labelledby="label_6 sublabel_input_6"  required=""  /></span> </div>
       </li>
       <li class="form-line" data-type="control_button" id="id_2">
         <div id="cid_2" class="form-input-wide" data-layout="full">
@@ -72,6 +72,7 @@
       fullArray[findIndex] = combinedData;
       localStorage.setItem("reviewObject", JSON.stringify(fullArray));
       alert("successfully changed");
+      window.location.href ="../pages/reviews.html";
     });
     let delete_user = document.getElementById("delete");
     delete_user.addEventListener("click", function (event) {
@@ -84,7 +85,7 @@
         fullArray.splice(indexDel, 1);
         console.log(fullArray);
         localStorage.setItem("reviewObject", JSON.stringify(fullArray));
-        // window.location.href ="";
+        window.location.href ="../pages/reviews.html";
       }
     });
   </script>

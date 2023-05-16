@@ -3,9 +3,13 @@ body{
     font-family: Inter,sans-serif;
     font-size: 16px;
     background-color: #f3f3fe;
-    color: #2c3345;
-    background-image: url(../../Assests/images/360_F_550265413_q14RreIwKgEuWEfZ6s6xIgish7SfOZrC.jpg);
+    background-image: url(../../Assests/images/blob_background.png);
+    background-blend-mode: multiply;
+    background-color: #7d7d83;
     background-size: cover;
+    width: 100vh;
+    height: auto;
+    background-repeat: no-repeat;
   }
   
   
@@ -91,7 +95,7 @@ body{
   #last_name{
     position: relative;
     left: 350px;
-    top: -120px;
+    top: -128px;
   }
   
   .email-top{

@@ -2,7 +2,6 @@
 if(JSON.parse(localStorage.getItem("bookingObject"))==null){
     let removing = document.getElementById("card_details");
     removing.style.visibility = "hidden";
-
     const node = document.createElement("h1");
     node.setAttribute("id", "h1-booking");
 const textnode = document.createTextNode("There is No booking done yet");
@@ -20,7 +19,7 @@ document.getElementById("orders").appendChild(node);
 
 let oneUser = JSON.parse(localStorage.getItem("login_user"));
     let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
-    let selectedUser = fullArray.find(function (event) {
+    let selectedUser = fullArray.filter(function (event) {
       let emailValue = event["email"];
       if (oneUser == emailValue) {
         return true;
@@ -36,6 +35,15 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
       }
     });
 
+    let logged_in = JSON.parse(localStorage.getItem("login_user"));
+    let seat_already = JSON.parse(localStorage.getItem("seat_booking"));
+    let seat_num = seat_already.filter(function (event) {
+      let emailValue = event["login_email"];
+      if (logged_in == emailValue) {
+        return true;
+      }
+    });
+
     console.log(selectedUser)
     console.log(findedArr)
 
@@ -47,7 +55,7 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
 
 
 
-    for(let i=0; i<fullArray.length;i++){
+    for(let i=0; i<selectedUser.length;i++){
 
       // create a table body element
    const tableBody = document.createElement('tbody');
@@ -64,11 +72,15 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
    const dateCell = document.createElement('td');
    dateCell.setAttribute('id', 'date');
    dateCell.textContent = fullArray[i]["date"];
-   
+
+   const timeCell = document.createElement('td');
+   timeCell.setAttribute('id', 'time');
+   timeCell.textContent = seat_num[i]["time"];
    
    const seatNumCell = document.createElement('td');
    seatNumCell.setAttribute('id', 'seat_num');
-   seatNumCell.textContent = fullArray[i]["seat_num"];
+   seatNumCell.setAttribute('class', 'seat_num');
+   seatNumCell.textContent = seat_num[i]["count"];
    
    
    const statusCell = document.createElement('td');
@@ -80,6 +92,7 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
    // add the cells to the row
    row.appendChild(nameCell);
    row.appendChild(dateCell);
+   row.appendChild(timeCell);
    row.appendChild(seatNumCell);
    row.appendChild(statusCell);
    

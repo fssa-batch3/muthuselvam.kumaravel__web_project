@@ -52,6 +52,11 @@ let emailBody = `
 
 }
 
+let otp_btn=document.querySelector("form")
+otp_btn.addEventListener("submit",(e)=>{
+   e.preventDefault();
+   verifyOtp();
+})
 function verifyOtp(){
     // let verify_btn = document.getElementById("OTP_btn")
     let otp_verified =0 ;
@@ -63,7 +68,7 @@ function verifyOtp(){
         if (otpverify == getOtp){
             otp_verified+=1;
             alert("Logged IN")
-            window.open("/index.html")
+            window.location.href="../index.html";
         }
         else {
             alert("Invalid OTP")

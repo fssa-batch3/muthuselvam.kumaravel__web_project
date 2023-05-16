@@ -45,7 +45,7 @@ body{
 
   .btn_save:hover{
     background-color: #65a11f;
-color: #000;
+color: #fff;
   }
 
   .btn_delete{
@@ -59,7 +59,7 @@ color: #000;
 
   .btn_delete:hover{
     background-color:rgb(189, 0, 0)	;
-color: #000;
+color: #fff;
   }
   .card-header {
       padding: 1rem 1.35rem;

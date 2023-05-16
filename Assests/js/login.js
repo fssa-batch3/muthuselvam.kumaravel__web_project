@@ -149,7 +149,7 @@ if (validator == true){
       localStorage.setItem("user_info", str);
       console.log(str);
       alert("Successfully Registered");
-      window.open("/pages/login.html")
+      window.location.href= "../pages/login.html"
 } else {
   alert("Password is not strong")
 }

@@ -10,6 +10,7 @@
   <body>
     <div class="company-2">
       <h1 class="cmpy">Select Your Company</h1>
+      <input type="text" id="search_input" name="search" placeholder="Search..">
     </div>
     <section class="main">
       <!-- <div class="card">
@@ -259,6 +260,8 @@
         company_logo.push(arr[i]);
       }
 
+      function showcard(company_logo){
+
       for (let i = 0; i < company_logo.length; i++) {
         let div_card;
         let div_imgbx;
@@ -297,12 +300,47 @@
         div_freshworks.innerText = "Book";
         div_contentbx.append(div_freshworks);
 
-        let div_new = document.querySelector("section ");
+        let div_new = document.querySelector("section");
         div_new.append(div_card);
 
         //JSON
-      }
+      }}
+
+      showcard(company_logo)
       console.log(company_logo);
+    </script>
+    <script>
+
+      let filterarray = []
+
+
+      document.getElementById("search_input").addEventListener("keyup",function(){
+      document.querySelector("section").innerText = "";
+
+        let text = document.getElementById("search_input").value;
+        
+        filterarray = company_logo.filter(function(a){
+          if(a.title.includes(text.toUpperCase())){
+            return a.title;
+          }
+        });
+
+        console.log(filterarray)
+        if(this.value ==""){
+          showcard(company_logo)
+        } else {
+         if(filterarray == ""){
+          document.querySelector("section").innerHTML = "";
+         } else {
+          showcard(filterarray)
+         }
+        }
+
+
+        
+      })
+
+
     </script>
   </body>
 </html>

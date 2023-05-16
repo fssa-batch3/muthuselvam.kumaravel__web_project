@@ -152,6 +152,42 @@ body h1 {
   top: 0;
   opacity: 1;
 }
+input[type=text] {
+  width: 130px;
+  margin-left: 1000px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  border: 2px solid #f9004d;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #000;
+  background-image: url('../images/icons8-search-50\ \(1\).png');
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  background-size: 40px;
+  padding: 12px 30px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  width: 200px;
+  box-shadow: #000 2px 2px 30px 10px;
+}
+
+input[type=text]:focus {
+  width: 50%;
+  /* border: 2px solid #f9004d; */
+  /* border: none; */
+  outline: none;
+  font-size: 16px;
+  color: #FFF;
+  padding-left: 70px;
+}
+
+
+input[type=text]::placeholder{
+  padding: 20px;
+  color: #fff;
+
+}
 
 /*  card 2 */
 

@@ -19,7 +19,7 @@
       <a href="">Booking History</a>
       <a href="#">Login History</a>
       <a href="#">Password</a>
-      <a href="#" id="logout" onclick="logout()">Logout</a>
+      <a href="#" id="delete" >Delete</a>
     </div>
     <span style="font-size:40px; cursor:pointer; margin-left:-370px; color: #000;" onclick="openNav()">&#9776; Menu</span>
     <div class="container-xl px-4 mt-4">
@@ -74,7 +74,7 @@
 
 
 </div>
-<button class="btn_delete" id="delete">Logout</button>
+<button class="btn_delete"  id="logout">Logout</button>
 <button class="btn_save" type="submit">Save changes</button>
 
 
@@ -126,8 +126,26 @@
 
       let editted = false;
       let profile_count = 0;
-      // for email
       let oneUser = JSON.parse(localStorage.getItem("login_user"));
+
+let seatArray = JSON.parse(localStorage.getItem("seat_booking"));
+let bookingArray = JSON.parse(localStorage.getItem("bookingObject"));
+
+console.log(seatArray)
+
+let login_seat = seatArray.filter(function (event) {
+        let emailValue = event["login_email"];
+        if (oneUser == emailValue) {
+          return true;
+        }
+      });
+      console.log(login_seat);
+
+        for (let i=0; i<login_seat.length;i++){
+          console.log(seatArray.indexOf(login_seat[i]))
+        }
+      
+      // for email
       // for array
       let fullArray = JSON.parse(localStorage.getItem("user_info"));
 
@@ -137,6 +155,8 @@
           return true;
         }
       });
+      console.log(fullArray.indexOf(selectedUser))
+
       console.log(selectedUser);
 
       let first_name = document.getElementById("full_name");
@@ -187,6 +207,7 @@
       delete_user.addEventListener("click", function (event) {
         event.preventDefault();
         let indexDel = fullArray.indexOf(selectedUser);
+        let seatIndex = seatArray.indexOf(login_seat);
         let msg = confirm("Are you sure you want to delete this account");
         if (msg !== true) {
           return;
@@ -194,6 +215,7 @@
           fullArray.splice(indexDel, 1);
           console.log(fullArray);
           localStorage.setItem("user_info", JSON.stringify(fullArray));
+
           // window.location.href ="";
         }
       });

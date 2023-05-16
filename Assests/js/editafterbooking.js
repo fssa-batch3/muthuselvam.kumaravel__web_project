@@ -13,7 +13,7 @@ let year_2 = tomorrow.getFullYear();
 
 let fullDate_2 = `${day_2}.${month_2}.${year_2}.`;
 
-function myfunction(){
+
 let x = document.getElementById("date");
 let option = document.createElement("option");
 option.text = fullDate;
@@ -22,7 +22,12 @@ x.add(option);
 let option_2 = document.createElement("option");
 option_2.text = fullDate_2;
 x.add(option_2);
-}
+
+
+let d = new Date(),
+    h = (d.getHours()<10?'0':'') + d.getHours(),
+    m = (d.getMinutes()<10?'0':'') + d.getMinutes();
+  current_time =  h + ':' + m;
 
 
     let oneUser = JSON.parse(localStorage.getItem("login_user"));
@@ -52,6 +57,12 @@ const form = document.getElementById("edit_form");
         if(e.length == 0 || e_2.length == 0){
           alert("Please Enter Your Date and Time");
           return;
+        }
+        if(e == fullDate){
+          if (e_2 < current_time){
+            alert("Enter a valid Hours and Minutes");
+            return
+          }
         }
         let firstName = document.getElementById("first_29").value;
         let lastName = document.getElementById("last_29").value;
