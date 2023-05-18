@@ -22,17 +22,17 @@
 
 
 
-    let logout = document.getElementById("logout");
-    logout.addEventListener("click", function (event) {
-      event.preventDefault();
-      let msg = confirm("Are you sure you want to logout this account");
-      if (msg !== true) {
-        return;
-      } else {
-        localStorage.setItem("login_user", JSON.stringify(null));
-         window.location.href ="../index.html";
-      }
-    });
+   //  let logout = document.getElementById("logout");
+   //  logout.addEventListener("click", function (event) {
+   //    event.preventDefault();
+   //    let msg = confirm("Are you sure you want to logout this account");
+   //    if (msg !== true) {
+   //      return;
+   //    } else {
+   //      localStorage.setItem("login_user", JSON.stringify(null));
+   //       window.location.href ="../index.html";
+   //    }
+   //  });
 
    for (let i=0; i<fullarr.length;i++){
 

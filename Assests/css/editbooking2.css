@@ -5,7 +5,7 @@ body{
     background-color: #f3f3fe;
     background-image: url(../../Assests/images/blob_background.png);
     background-blend-mode: multiply;
-    background-color: #7d7d83;
+   
     background-size: cover;
     width: 100vh;
     height: auto;
@@ -72,11 +72,11 @@ body{
     box-sizing: border-box;
     border: 1px solid #e1e2e8;
     outline: none;
-    border-radius: 4px;
+  
     /* font-weight: 500; */
     font-size: 16px;
     font-family: Inter,sans-serif;
-  font-size: 24px;
+
    
   }
   

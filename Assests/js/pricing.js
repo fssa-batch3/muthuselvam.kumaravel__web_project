@@ -70,21 +70,21 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
    // create table cells for name, date, seat number, and status
    const nameCell = document.createElement('td');
    nameCell.setAttribute('id', 'name');
-   nameCell.textContent = fullArray[i]["firstname"];
+   nameCell.textContent = selectedUser[i]["firstname"];
    
    
    const dateCell = document.createElement('td');
    dateCell.setAttribute('id', 'date');
-   dateCell.textContent = fullArray[i]["date"];
+   dateCell.textContent = selectedUser[i]["date"];
 
    const timeCell = document.createElement('td');
    timeCell.setAttribute('id', 'time');
-   timeCell.textContent = fullArray[i]["time"];
+   timeCell.textContent = selectedUser[i]["time"];
    
    const seatNumCell = document.createElement('td');
    seatNumCell.setAttribute('id', 'seat_num');
    seatNumCell.setAttribute('class', 'seat_num');
-   seatNumCell.textContent = fullArray[i]["seat_num"];
+   seatNumCell.textContent = selectedUser[i]["seat_num"];
    
    
    const statusCell = document.createElement('td');
