@@ -74,7 +74,8 @@ if (paraName == last_booking["date"]){
 console.log(true)
 if (paraName_2 == last_booking["time"]){
 console.log(true)
-  let seat_booked = JSON.parse(localStorage.getItem("seat_booking"));
+  let seat_booked = JSON.parse(localStorage.getItem("bookingObject"));
+  console.log(seat_booked)
   let seatObj = seat_booked.filter(function (user) {
         let title = user["date"];
         let title_2 = user["time"];
@@ -98,10 +99,12 @@ console.log(true)
       console.log(true)
       if(seatObj[j]["time"] == paraName_2){
         console.log(true)
+        if(seatObj[j]["seat_num"]!= null){
         for (let i=0; i<seatObj.length;i++){
-          let seat_num = seatObj[i]["count"] -1
+          let seat_num = seatObj[i]["seat_num"] -1
     seats[seat_num].classList.add("sold")
       }
+    }
     }
     
   } else {
@@ -112,6 +115,16 @@ console.log(true)
 }
 }
 }
+
+
+let oneUser = JSON.parse(localStorage.getItem("login_user"));
+let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
+let selectedUser = fullArray.find(function (event) {
+  let emailValue = event["email"];
+  if (oneUser == emailValue) {
+    return true;
+  }
+});
 
 
 
@@ -127,7 +140,15 @@ confirm_btn.addEventListener("click", function(event){
   if (localStorage.getItem("seat_booking") != null) {
     seatbooked = JSON.parse(localStorage.getItem("seat_booking"));
   }
+  let bookingobject = JSON.parse(localStorage.getItem("bookingObject"))
+  let editted_array = JSON.parse(localStorage.getItem("edit_array"))
   let count = document.getElementById("count").innerHTML
+
+  let seat_num = {seat_num: count}
+  let combinedData = Object.assign(editted_array, seat_num);
+  let findIndex = fullArray.indexOf(selectedUser);
+  fullArray[findIndex] = combinedData;
+  localStorage.setItem("bookingObject", JSON.stringify(fullArray));
   let login_id = JSON.parse(localStorage.getItem("login_user"))
   let seat_data = {count : count,date: time_slot[time_slot.length-1]["date"], time: time_slot[time_slot.length-1]["time"] ,login_email: login_id}
 seatbooked.push(seat_data);

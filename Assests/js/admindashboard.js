@@ -7,7 +7,7 @@
     
 
     let fullarr = JSON.parse(localStorage.getItem("user_info"));
-    
+      let seat_array = JSON.parse(localStorage.getItem("seat_booking"))
 
     // console.log(selectedUser)
     // console.log(findedArr)
@@ -20,6 +20,19 @@
     document.getElementById("today_login").innerHTML = JSON.parse(localStorage.getItem("today_logged"));
     document.getElementById("total_booking").innerHTML = JSON.parse(localStorage.getItem("today_bookings"));
 
+
+
+    let logout = document.getElementById("logout");
+    logout.addEventListener("click", function (event) {
+      event.preventDefault();
+      let msg = confirm("Are you sure you want to logout this account");
+      if (msg !== true) {
+        return;
+      } else {
+        localStorage.setItem("login_user", JSON.stringify(null));
+         window.location.href ="../index.html";
+      }
+    });
 
    for (let i=0; i<fullarr.length;i++){
 
@@ -86,7 +99,7 @@ dateCell.textContent = fullArray[i]["date"];
 
 const seatNumCell = document.createElement('td');
 seatNumCell.setAttribute('id', 'seat_num');
-seatNumCell.textContent = fullArray[i]["seat_num"];
+seatNumCell.textContent = seat_array[i]["count"];
 
 
 const statusCell = document.createElement('td');

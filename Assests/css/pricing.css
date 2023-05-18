@@ -136,3 +136,23 @@ h1{
   position: relative;
   left: 2rem;
 }
+
+button{
+  padding: 10px;
+  margin: 10px;
+  width: 80px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.edit{
+  background-color:  #4CAF50;
+  color: #fff;
+}
+
+.delete{
+  background-color: #c11423 ;
+  color: #fff;
+
+}

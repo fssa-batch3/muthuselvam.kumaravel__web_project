@@ -58,10 +58,6 @@ let d = new Date(),
 
 
 const form = document.getElementById("231190591447457");
-
-    
-
-      
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         let e = document.getElementById("date").value;
@@ -78,6 +74,32 @@ const form = document.getElementById("231190591447457");
             return
           }
         }
+        if(localStorage.getItem("bookingObject") != null){
+          let oneUser = JSON.parse(localStorage.getItem("login_user"));
+    let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
+    let selectedUser = fullArray.filter(function (event) {
+      let emailValue = event["email"];
+      if (oneUser == emailValue) {
+        return true;
+      }
+    });
+
+    console.log(selectedUser)
+
+    for (let i=0; i<selectedUser.length; i++){
+      if (e == selectedUser[i]["date"]){
+        if (e_2 == selectedUser[i]["time"]){
+          alert("You have already seat in this timeframe")
+          return
+        }
+      }
+    }
+  }
+
+  
+
+
+
         let bookingArray = [];
         if (localStorage.getItem("bookingObject") != null) {
           bookingArray = JSON.parse(localStorage.getItem("bookingObject"));
@@ -102,7 +124,7 @@ const form = document.getElementById("231190591447457");
           date: date,
           time: time,
           booking_id:booking_id,
-          
+          seat_num: null,
           uuid: Date.now()
         };
         bookingArray.push(bookingObject);
