@@ -59,7 +59,7 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
 
 
 
-    for(let i=0; i<seat_num.length;i++){
+    for(let i=0; i<selectedUser.length;i++){
 
       // create a table body element
    const tableBody = document.createElement('tbody');
@@ -125,11 +125,10 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
    table.appendChild(tableBody);
     }
 
-    function reply_click(clicked_id)
-  {
+    function reply_click(clicked_id){
       let string_id = JSON.stringify(clicked_id);
       localStorage.setItem("clicked_id",string_id);
-      window.open("/pages/editbooking2.html")
+      window.open("/pages/editbooking2.html?edit=true")
   }
 
    function reply_click_delete(clicked_id){

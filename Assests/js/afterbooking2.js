@@ -29,7 +29,7 @@ let oneUser = JSON.parse(localStorage.getItem("login_user"));
 let sub_btn =document.getElementById("input_2")
 
 let a_tag = document.createElement("a");
-a_tag.setAttribute("href","../pages/seatbooking.html?date="+edit_array["date"]+"&time="+edit_array["time"])
+a_tag.setAttribute("href","../pages/seatbooking.html?date="+edit_array["date"]+"&time="+edit_array["time"]+"&edit=true")
 a_tag.setAttribute("id","submit")
 a_tag.textContent = "Submit"
 sub_btn.append(a_tag)

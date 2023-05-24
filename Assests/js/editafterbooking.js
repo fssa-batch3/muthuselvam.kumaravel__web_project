@@ -3,7 +3,7 @@ let day = date.getDate();
 let month = date.getMonth()+1;
 let year = date.getFullYear();
 
-let fullDate = `${day}.${month}.${year}.`;
+let fullDate = `${day}.${month}.${year}`;
 
 let tomorrow = new Date();
 tomorrow.setDate(date.getDate() + 1);
@@ -11,7 +11,7 @@ let day_2 = tomorrow.getDate();
 let month_2 = tomorrow.getMonth()+1;
 let year_2 = tomorrow.getFullYear();
 
-let fullDate_2 = `${day_2}.${month_2}.${year_2}.`;
+let fullDate_2 = `${day_2}.${month_2}.${year_2}`;
 
 
 let x = document.getElementById("date");

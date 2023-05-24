@@ -90,7 +90,7 @@ const form = document.getElementById("231190591447457");
       if (e == selectedUser[i]["date"]){
         if (e_2 == selectedUser[i]["time"]){
           alert("You have already seat in this timeframe")
-          return
+          return false;
         }
       }
     }

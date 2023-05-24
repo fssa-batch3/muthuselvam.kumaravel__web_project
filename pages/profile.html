@@ -106,10 +106,10 @@
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=17c1eec5fda94044a4f259c7dec24978`)
         .then(Response => Response.json()).then(result => {
           let allDetails = result.results[0].components;
-          let {city_district}= allDetails
+          let {country}= allDetails
           console.log(result)
           console.log(allDetails)
-          input_location.value=`${city_district}`;
+          input_location.value=`${country}`;
         })
         
       }
@@ -128,22 +128,7 @@
       let profile_count = 0;
       let oneUser = JSON.parse(localStorage.getItem("login_user"));
 
-let seatArray = JSON.parse(localStorage.getItem("seat_booking"));
-let bookingArray = JSON.parse(localStorage.getItem("bookingObject"));
 
-console.log(seatArray)
-
-let login_seat = seatArray.filter(function (event) {
-        let emailValue = event["login_email"];
-        if (oneUser == emailValue) {
-          return true;
-        }
-      });
-      console.log(login_seat);
-
-        for (let i=0; i<login_seat.length;i++){
-          console.log(seatArray.indexOf(login_seat[i]))
-        }
       
       // for email
       // for array
@@ -168,10 +153,10 @@ let login_seat = seatArray.filter(function (event) {
 
 
       email.value = selectedUser["userEmail"];
-      first_name.value = selectedUser["first_name"];
-      last_name.value = selectedUser["last_name"];
-      phone_num_2.value = selectedUser["phone_num"];
-      location_2.value = selectedUser["location"];
+      first_name.value = "muthu";
+      last_name.value = "selvam";
+      phone_num_2.value = "9363630498";
+      location_2.value = "taramani";
       username.value = selectedUser["userName"];
 
 
@@ -266,6 +251,26 @@ let logout = document.getElementById("logout");
       //   const combineData = Object.assign(selectOneUser, newData);
       //   console.log(combineData);
       // });
+
+if (JSON.parse(localStorage.getItem("bookingObject"))!=null){
+
+      let seatArray = JSON.parse(localStorage.getItem("seat_booking"));
+let bookingArray = JSON.parse(localStorage.getItem("bookingObject"));
+
+console.log(seatArray)
+
+let login_seat = seatArray.filter(function (event) {
+        let emailValue = event["login_email"];
+        if (oneUser == emailValue) {
+          return true;
+        }
+      });
+      console.log(login_seat);
+
+        for (let i=0; i<login_seat.length;i++){
+          console.log(seatArray.indexOf(login_seat[i]))
+        }
+        }
     </script>
                             
 <script type='text/javascript'>

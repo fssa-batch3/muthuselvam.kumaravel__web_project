@@ -91,19 +91,23 @@ const form = document.getElementById("edit_form");
         let phoneNum = document.getElementById("input_31_full").value;
         let date = document.getElementById("date").value;
         let time = document.getElementById("time").value;
-
-        let newData = {first_name: firstName,
+        let booking_id = "#"+Math.floor(100000000 + Math.random() * 900000000);
+        let newData = {
+          booking_id: booking_id,
+          first_name: firstName,
             last_name: lastName,
             email: email,
             phone_num: phoneNum,
             date: date,
             time: time,
-          seat_num: null,}
+          seat_num: null,
+        uuid : Date.now()
+      }
 
             let combinedData = Object.assign(selectedUser, newData);
       let findIndex = fullArray.indexOf(selectedUser);
       fullArray[findIndex] = combinedData;
-      localStorage.setItem("bookingObject", JSON.stringify(fullArray));
+      localStorage.setItem("edit_array", JSON.stringify(fullArray));
       alert("successfully changed");
         window.open("/pages/afterbooking.html");
 

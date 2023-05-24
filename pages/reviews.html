@@ -25,6 +25,11 @@
 
 <script>
 
+  if(JSON.parse(localStorage.getItem("login_user"))==null){
+    document.querySelector(".add-button").style.visibility = "hidden";
+    document.querySelector(".edit-button").style.visibility = "hidden";
+  }
+
 function toggle_2(){
   
   let blur = document.getElementById("blur");
@@ -76,21 +81,21 @@ body.classList.add("stop-scrolling");
 
 let review_list = [
         {
-          para:"asdfghjklqwertyuiopzxcvbnmasdfghjklsdfghjklqwertyuiopzxcvbnmasdfghjklsdfghjklqwertyuiopzxcvbnmasdfghjkl",
-          name: "FRESHWORKS",
-          date: "zoho",
+          para:"This platform is very useful for us in our daily basis... Thank you so much!!!",
+          name: "NEO",
+          date: "01/05/2023",
           
         },
         {
-          para:"asdfghjklqwertyuiopzxcvbnmasdfghjkl",
-          name: "FRESHWORKS",
-          date: "zoho",
+          para:"Thanks your providing the good platform for booking. Very special and Memorable Trip",
+          name: "UTCHI",
+          date: "10/05/2023",
           
         },
         {
-          para:"asdfghjklqwertyuiopzxcvbnmasdfghjkl",
+          para:"Such a good webiste for office shuttle. It is very useful for office purpose",
           name: "FRESHWORKS",
-          date: "zoho",
+          date: "18/05/2023",
           
         },
       ]

@@ -89,14 +89,18 @@ const form = document.getElementById("edit_form");
         let phoneNum = document.getElementById("input_31_full").value;
         let date = document.getElementById("date").value;
         let time = document.getElementById("time").value;
+        let booking_id = "#"+Math.floor(100000000 + Math.random() * 900000000);
 
-        let newData = {firstname: firstName,
+        let newData = {
+          booking_id :booking_id,
+          firstname: firstName,
             lastname: lastName,
             email: email,
             phonenum: phoneNum,
             date: date,
             time: time,
-            seat_num: null
+            seat_num: null,
+            uuid: Date.now()
             }
 
             

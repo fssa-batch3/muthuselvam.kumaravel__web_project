@@ -3,6 +3,7 @@
 
 
 
+
     let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
     
 
@@ -13,15 +14,15 @@
     // console.log(findedArr)
 
    
-
+    if (JSON.parse(localStorage.getItem("user_info"))!=null){
 
     document.getElementById("total_users").innerHTML = JSON.parse(localStorage.getItem("user_info")).length;
     document.getElementById("total_active").innerHTML = JSON.parse(localStorage.getItem("user_info")).length;
     document.getElementById("today_login").innerHTML = JSON.parse(localStorage.getItem("today_logged"));
-    document.getElementById("total_booking").innerHTML = JSON.parse(localStorage.getItem("today_bookings"));
+    document.getElementById("total_booking").innerHTML = JSON.parse(localStorage.getItem("bookingObject")).length;
 
 
-
+}
    //  let logout = document.getElementById("logout");
    //  logout.addEventListener("click", function (event) {
    //    event.preventDefault();
@@ -33,6 +34,9 @@
    //       window.location.href ="../index.html";
    //    }
    //  });
+
+   if (JSON.parse(localStorage.getItem("user_info"))!=null){
+
 
    for (let i=0; i<fullarr.length;i++){
 
@@ -76,6 +80,10 @@ element.appendChild(table);
 
 
    }
+}
+
+
+if (JSON.parse(localStorage.getItem("bookingObject"))!=null){
 
 
    for(let i=0; i<fullArray.length;i++){
@@ -99,7 +107,7 @@ dateCell.textContent = fullArray[i]["date"];
 
 const seatNumCell = document.createElement('td');
 seatNumCell.setAttribute('id', 'seat_num');
-seatNumCell.textContent = seat_array[i]["count"];
+seatNumCell.textContent = fullArray[i]["seat_num"];
 
 
 const statusCell = document.createElement('td');
@@ -122,3 +130,4 @@ const table = document.getElementById('recent_book');
 table.appendChild(tableBody);
    }
 
+}

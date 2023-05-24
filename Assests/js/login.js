@@ -218,7 +218,11 @@ logIn.addEventListener("submit", (event) => {
   if(email_log == "admin@gmail.com" && password_log == "admin"){
     Notify.success("Logged In");
   window.open("/pages/admincompany.html");
-  } else{
+  } else if(email_log == "driver@gmail.com" && password_log == "driver"){
+    Notify.success("Logged In");
+    window.open("/pages/driverview.html");
+  } 
+   else{
   for (let i = 0; i < defaultData.length; i++) {
 
     if (

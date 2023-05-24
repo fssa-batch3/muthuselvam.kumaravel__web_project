@@ -59,6 +59,78 @@ if(JSON.parse(localStorage.getItem("selectedSeats"))== null){
   
 });
 
+
+
+let oneUser = JSON.parse(localStorage.getItem("login_user"));
+let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
+let selectedUser = fullArray.filter(function (event) {
+  let emailValue = event["email"];
+  if (oneUser == emailValue) {
+    return true;
+    // console.log(selectedUser)
+  }
+});
+
+
+
+
+let confirm_btn = document.getElementById("confirm")
+confirm_btn.addEventListener("click", function(event){
+  event.preventDefault();
+  let seatbooked = [];
+ let editted_array =[];
+  if (localStorage.getItem("seat_booking") != null) {
+    seatbooked = JSON.parse(localStorage.getItem("seat_booking"));
+  }
+  let bookingobject = JSON.parse(localStorage.getItem("bookingObject"))
+  if (localStorage.getItem("edit_array") != null) {
+   editted_array = JSON.parse(localStorage.getItem("edit_array"))
+  }
+  let count = document.getElementById("count").innerHTML
+
+  let seat_num = {seat_num: count}
+  let params = window.location.search;
+  console.log(params);
+  let parameter = new URLSearchParams(params);
+  let paraName = parameter.get("edit");
+console.log(paraName)
+  if(paraName == true){
+    let clicked_id = JSON.parse(localStorage.getItem("clicked_id"))
+    let oneUser = JSON.parse(localStorage.getItem("login_user"));
+let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
+let selectedUser = fullArray.filter(function (event) {
+  let emailValue = event["email"];
+  if (oneUser == emailValue) {
+    // return true;
+    console.log(selectedUser)
+  }
+});
+let seat_num = {seat_num: count}
+  let combinedData = Object.assign(editted_array[0], seat_num);
+  selectedUser[clicked_id] = combinedData;
+  localStorage.setItem("bookingObject", JSON.stringify(fullArray));
+
+  } else {
+  let combinedData = Object.assign(bookingobject[bookingobject.length-1], seat_num);
+  // let findIndex = fullArray.indexOf(selectedUser);
+  fullArray[fullArray.length-1] = combinedData;
+  localStorage.setItem("bookingObject", JSON.stringify(fullArray));
+  let login_id = JSON.parse(localStorage.getItem("login_user"))
+  let seat_data = {count : count,date: time_slot[time_slot.length-1]["date"], time: time_slot[time_slot.length-1]["time"] ,login_email: login_id}
+seatbooked.push(seat_data);
+localStorage.setItem("seat_booking",JSON.stringify(seatbooked));
+for(let i=0; i<seats_selected.length; i++){
+  if (seats_selected[i].classList.contains("selected")){
+    seats_selected[i].classList.remove("selected")
+    seats_selected[i].classList.add("sold")
+  }
+}
+window.location.href = "../pages/finalconfirmation.html"
+  }
+})
+
+
+
 if(JSON.parse(localStorage.getItem("seat_booking")) != null){
   let params = window.location.search;
   console.log(params);
@@ -101,7 +173,8 @@ console.log(true)
         console.log(true)
         if(seatObj[j]["seat_num"]!= null){
         for (let i=0; i<seatObj.length;i++){
-          let seat_num = seatObj[i]["seat_num"] -1
+          let seat_num = seatObj[i]["seat_num"] -1;
+          console.log(seat_num);
     seats[seat_num].classList.add("sold")
       }
     }
@@ -116,49 +189,4 @@ console.log(true)
 }
 }
 
-
-let oneUser = JSON.parse(localStorage.getItem("login_user"));
-let fullArray = JSON.parse(localStorage.getItem("bookingObject"));
-let selectedUser = fullArray.find(function (event) {
-  let emailValue = event["email"];
-  if (oneUser == emailValue) {
-    return true;
-  }
-});
-
-
-
-
-
-
-
-let confirm_btn = document.getElementById("confirm")
-confirm_btn.addEventListener("click", function(event){
-  event.preventDefault();
-  let seatbooked = [];
- 
-  if (localStorage.getItem("seat_booking") != null) {
-    seatbooked = JSON.parse(localStorage.getItem("seat_booking"));
-  }
-  let bookingobject = JSON.parse(localStorage.getItem("bookingObject"))
-  let editted_array = JSON.parse(localStorage.getItem("edit_array"))
-  let count = document.getElementById("count").innerHTML
-
-  let seat_num = {seat_num: count}
-  let combinedData = Object.assign(editted_array, seat_num);
-  let findIndex = fullArray.indexOf(selectedUser);
-  fullArray[findIndex] = combinedData;
-  localStorage.setItem("bookingObject", JSON.stringify(fullArray));
-  let login_id = JSON.parse(localStorage.getItem("login_user"))
-  let seat_data = {count : count,date: time_slot[time_slot.length-1]["date"], time: time_slot[time_slot.length-1]["time"] ,login_email: login_id}
-seatbooked.push(seat_data);
-localStorage.setItem("seat_booking",JSON.stringify(seatbooked));
-for(let i=0; i<seats_selected.length; i++){
-  if (seats_selected[i].classList.contains("selected")){
-    seats_selected[i].classList.remove("selected")
-    seats_selected[i].classList.add("sold")
-  }
-}
-window.location.href = "../pages/finalconfirmation.html"
-})
 
