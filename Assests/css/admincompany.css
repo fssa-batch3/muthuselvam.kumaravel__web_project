@@ -9,6 +9,42 @@
 body {
   background: #09161d;
 }
+.add-button{
+  border-radius: 15px;
+padding:       20px 45px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal bold 26px/1 "Calibri", sans-serif;
+text-align:    center;
+/* margin-left: 1000px; */
+margin-left: 1200px;
+    margin-top: -200px;
+    position: relative;
+    top: -80px;
+}
+
+.add-button a{
+  color: #000;
+  text-decoration: none;
+}
+.dash-button{
+  border-radius: 15px;
+padding:       20px 45px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal bold 26px/1 "Calibri", sans-serif;
+text-align:    center;
+/* margin-left: 1000px; */
+margin-left: 900px;
+    margin-top: -200px;
+    position: relative;
+    top: -120px;
+}
+
+.dash-button a{
+  color: #000;
+  text-decoration: none;
+}
 
 body h1 {
   position: absolute;

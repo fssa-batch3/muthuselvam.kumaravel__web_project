@@ -10,6 +10,7 @@
   <body>
     <div class="company-2">
       <h1 class="cmpy">Select Your Company</h1>
+      <input type="text" id="search_input" name="search" placeholder="Search..">
     </div>
     <section class="main">
       <!-- <div class="card">
@@ -89,7 +90,7 @@
           />
         </div>
         <div class="contentbx-5">
-          <h3>cloudera</h3>
+          <h3>cloud</h3>
           <a href="calendar.html" class="cloudera">Book</a>
         </div>
       </div> -->
@@ -253,27 +254,13 @@
           height: "180",
         },
       ];
-      //       <-- card 1-->
-
-      //  <div class="card">
-      //     <div class="imgbx">
-      //       <img
-      //         src="../Assests/images/freshworks2-removebg-preview.png"
-      //         alt=""
-      //         height="200"
-      //         width="200"
-      //       />
-      //     </div>
-      //     <div class="contentbx">
-      //       <h3>Freshworks</h3>
-      //       <a href="calendar.html" class="freshworks">Book</a>
-      //     </div>
-      // </div>
 
       const arr = JSON.parse(localStorage.getItem("proObject"));
       for (let i = 0; i < arr.length; i++) {
         company_logo.push(arr[i]);
       }
+
+      function showcard(company_logo){
 
       for (let i = 0; i < company_logo.length; i++) {
         let div_card;
@@ -294,8 +281,8 @@
         img_card = document.createElement("img");
         console.log(company_logo[i]);
         img_card.setAttribute("src", company_logo[i].img["src"]);
-        img_card.setAttribute("width", company_logo[i].width);
-        img_card.setAttribute("height", company_logo[i].height);
+        img_card.setAttribute("width", "80%");
+        img_card.setAttribute("height", "80%");
         img_card.setAttribute("alt", company_logo[i].img["alt"]);
         div_imgbx.append(img_card);
 
@@ -309,15 +296,51 @@
 
         div_freshworks = document.createElement("a");
         div_freshworks.setAttribute("class", "freshworks");
+        div_freshworks.setAttribute("href","/pages/booking.html");
         div_freshworks.innerText = "Book";
         div_contentbx.append(div_freshworks);
 
-        let div_new = document.querySelector("section ");
+        let div_new = document.querySelector("section");
         div_new.append(div_card);
 
         //JSON
-      }
+      }}
+
+      showcard(company_logo)
       console.log(company_logo);
+    </script>
+    <script>
+
+      let filterarray = []
+
+
+      document.getElementById("search_input").addEventListener("keyup",function(){
+      document.querySelector("section").innerText = "";
+
+        let text = document.getElementById("search_input").value;
+        
+        filterarray = company_logo.filter(function(a){
+          if(a.title.includes(text.toUpperCase())){
+            return a.title;
+          }
+        });
+
+        console.log(filterarray)
+        if(this.value ==""){
+          showcard(company_logo)
+        } else {
+         if(filterarray == ""){
+          document.querySelector("section").innerHTML = "";
+         } else {
+          showcard(filterarray)
+         }
+        }
+
+
+        
+      })
+
+
     </script>
   </body>
 </html>

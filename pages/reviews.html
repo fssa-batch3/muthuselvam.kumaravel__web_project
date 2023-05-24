@@ -3,231 +3,170 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Testimonials Section | CodingNepal</title>
+    <title>Review Section</title>
     <link rel="stylesheet" href="../Assests/css/reviews.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
-    <h1>OUR REVIEWS</h1>
-    <div class="review-top"></div>
+    
+    <button class="edit-button"> <a href="../pages/editreview.html" > Edit </a></button>
+    <button class="add-button" onclick="reviewChecker()"> <a href="../pages/addreview.html" > Add </a></button>
+
+    <div class="review-top"><h1>OUR REVIEWS</h1></div>
+    <div class="popup" id="popup"><button id="close" onclick="toggle_2()" >&times;</button>
+      <h2>You Need to Login</h2>
+    </div>
 
     <div class="wrapper">
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Steven Chris</div>
-            <div class="job">YouTuber | Blogger</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-2.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Kristina Bellis</div>
-            <div class="job">Freelancer | Advertiser</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-3.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-quote-left quote"></i>
-        <p>
-          Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing
-          elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos
-          repellendus repudiandae deleniti ideas fuga molestiae, alias.
-        </p>
-        <div class="content">
-          <div class="info">
-            <div class="name">Alex Smith</div>
-            <div class="job">Designer | Developer</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <div class="image">
-            <img src="../Assests/images/profile-1.jpeg" alt="" />
-          </div>
-        </div>
-      </div>
+     
+      
     </div>
+      
+
+<script>
+
+  if(JSON.parse(localStorage.getItem("login_user"))==null){
+    document.querySelector(".add-button").style.visibility = "hidden";
+    document.querySelector(".edit-button").style.visibility = "hidden";
+  }
+
+function toggle_2(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
+
+function toggle_3(){
+
+
+event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+} 
+  
+  function reviewChecker(){
+    
+        let checker = false;
+        let parseEmail = JSON.parse(localStorage.getItem("login_user"));
+        console.log(parseEmail)
+        let review = JSON.parse(localStorage.getItem("reviewObject"));
+        console.log(review)
+        let selectedUser = review.find(function (event) {
+        let emailValue = event["email"];
+        if (parseEmail == emailValue) {
+          
+          checker = true;
+
+        }
+        
+      });
+      if(checker == true){
+        alert("Your review limits exceeds...!!!");
+        window.open("/pages/reviews.html");
+        } else {
+          window.open("/pages/addreview.html")
+        }
+      
+
+      }
+
+
+let review_list = [
+        {
+          para:"This platform is very useful for us in our daily basis... Thank you so much!!!",
+          name: "NEO",
+          date: "01/05/2023",
+          
+        },
+        {
+          para:"Thanks your providing the good platform for booking. Very special and Memorable Trip",
+          name: "UTCHI",
+          date: "10/05/2023",
+          
+        },
+        {
+          para:"Such a good webiste for office shuttle. It is very useful for office purpose",
+          name: "FRESHWORKS",
+          date: "18/05/2023",
+          
+        },
+      ]
+
+
+
+      const review = JSON.parse(localStorage.getItem("reviewObject"));
+      for(let i=0; i < review.length; i++){
+        review_list.push(review[i])
+      }
+      console.log(review)
+
+for (let i = 0; i < review_list.length; i++) {
+        
+    
+        let div_box = document.createElement("div");
+        div_box.setAttribute("class", "box");
+        console.log(div_box);
+
+       
+        let i_fas = document.createElement("i");
+        i_fas.setAttribute("class", "fas fa-quote-left quote");
+        div_box.append(i_fas);
+
+        let para = document.createElement("p");
+        para.innerText= review_list[i].para
+        div_box.append(para)
+
+
+        let div_content = document.createElement("div");
+        div_content.setAttribute("class", "content");
+        div_box.append(div_content);
+
+        let div_info = document.createElement("div");
+        div_info.setAttribute("class", "info");
+        div_content.append(div_info);
+
+        let div_name = document.createElement("div");
+        div_name.setAttribute("class", "name");
+        div_name.innerText = review_list[i].name
+        div_info.append(div_name);
+
+        let div_job = document.createElement("div");
+        div_job.setAttribute("class", "job");
+        div_job.innerText = review_list[i].date
+        div_info.append(div_job);
+
+
+        let div_wrapper= document.querySelector(".wrapper")
+        div_wrapper.append(div_box)
+
+        console.log(review_list)
+
+      }
+
+
+
+
+      
+
+
+</script>
+
+
+
+
+                        
+<script type='text/javascript'>
+  (function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'fEdfoxM4XCqScdC9R_c', {});
+</script>
+                  
+
   </body>
 </html>

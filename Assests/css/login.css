@@ -6,17 +6,38 @@
   box-sizing: border-box;
 }
 
-body,
+body{
+  background-image: url(../images/side-wave_background.jpg);
+  background-color: rgb(216, 216, 216);
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+}
+
+
 input {
   font-family: "Poppins", sans-serif;
+  
+}
+
+.g-signin2{
+  background-color: #f9000d;
+  margin-top: 30px;
+  
+
 }
 
 .container {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
   min-height: 100vh;
   overflow: hidden;
+ 
 }
 
 .forms-container {
@@ -58,11 +79,12 @@ form.sign-up-form {
 
 form.sign-in-form {
   z-index: 2;
+  margin-right: 100px;
 }
 
 .title {
   font-size: 2.2rem;
-  color: #444;
+  color: #000;
   margin-bottom: 10px;
 }
 
@@ -141,12 +163,22 @@ form div input {
   padding: 10px;
   outline: none;
 }
-
+.fa-eye{
+  position: absolute;
+  top: -3%;
+  right: 4%;
+  cursor: pointer;
+  color: lightgray;
+}
 #username:valid {
   border-color: green;
 }
 
 #username:focus:invalid {
+  border-color: red;
+}
+
+#password:focus:invalid {
   border-color: red;
 }
 #password:valid {
@@ -168,6 +200,13 @@ form div input {
 #email_1:focus:invalid {
   border-color: red;
 }
+#email:valid {
+  border-color: green;
+}
+
+#email:focus:invalid {
+  border-color: red;
+}
 #password_1:valid {
   border-color: green;
 }
@@ -183,6 +222,26 @@ form div input {
 #password_2:focus:invalid {
   border-color: red;
 }
+.strength{
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  bottom: 8px;
+  /* border-radius: 10px; */
+
+}
+#strength-bar{
+  background-color: #dcdcdc;
+  width: 60%;
+  height: 10px;
+  position: relative;
+  margin-top: -15px;
+  margin-left: -5px;
+  border-radius: 10px;
+}
+
+
 
 /* .sign-up-form div input :invalid {
   border-color: red;
@@ -251,7 +310,7 @@ form div input {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #f9009d 0%, #f9000d 100%);
+  background-image: #f9004d;
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -269,6 +328,7 @@ form div input {
 .left-panel {
   pointer-events: all;
   padding: 3rem 17% 2rem 12%;
+  margin-top: 200px;
 }
 
 .right-panel {
@@ -277,7 +337,7 @@ form div input {
 }
 
 .panel .content {
-  color: #fff;
+  color: #000;
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
   margin-top: -400px;
@@ -286,11 +346,12 @@ form div input {
 .panel h3 {
   font-weight: 600;
   line-height: 1;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
 }
 
 .panel p {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
+  color: #000;
   padding: 0.7rem 0;
 }
 
@@ -302,14 +363,16 @@ form div input {
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
+  background-color: #000;
+  border-color: #000;
 }
 
 .right-panel .image,
 .right-panel .content {
-  transform: translateX(1100px);
+  transform: translateY(1100px);
 }
 
-/* ANIMATION */
+
 
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
@@ -318,7 +381,7 @@ form div input {
 
 .container.sign-up-mode .left-panel .image,
 .container.sign-up-mode .left-panel .content {
-  transform: translateX(-800px);
+  transform: translateY(-800px);
 }
 
 .container.sign-up-mode .signin-signup {
@@ -346,4 +409,6 @@ form div input {
 
 .container.sign-up-mode .right-panel {
   pointer-events: all;
+  margin-top: 100px;
+  /* margin-right: 100px; */
 }

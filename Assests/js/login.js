@@ -7,6 +7,96 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); 
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); 
+}
+const passwordInput = document.querySelector("#password")
+const eye = document.querySelector("#eye")
+eye.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput.setAttribute("type", type)
+})
+
+const passwordInput2 = document.querySelector("#password_1")
+const eye2 = document.querySelector("#eye2")
+eye2.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput2.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput2.setAttribute("type", type)
+})
+
+const passwordInput3 = document.querySelector("#password_2")
+const eye3 = document.querySelector("#eye3")
+eye3.addEventListener("click", function(){
+  this.classList.toggle("fa-eye-slash")
+  const type = passwordInput3.getAttribute("type") === "password" ? "text" : "password"
+  passwordInput3.setAttribute("type", type)
+})
+
+let validator = false;
+
+let parameters = {
+  count : false,
+  letters : false,
+  upletters : false,
+  numbers : false,
+  special : false
+}
+
+let strengthBar = document.getElementById("strength-bar");
+function strengthChecker(){ 
+let password = document.getElementById("password_1").value;
+//Now the values ​​of the parameters have been added.
+  parameters.letters = (/[a-z]+/.test(password))?true:false;
+  parameters.upletters = (/[A-Z]+/.test(password))?true:false;
+  parameters.numbers = (/[0-9]+/.test(password))?true:false;
+  parameters.special = (/[!\”$%&/()=?@~`\\.\’;:+=^*_-]+/.test(password))?true:false;
+  parameters.count = (password.length > 7)?true:false;
+  let barLength = Object.values(parameters).filter(value=>value);
+  console.log(Object.values(parameters), barLength);
+  strengthBar.innerHTML = "";
+  for( let i in barLength){
+      let span = document.createElement("span");
+      span.classList.add("strength");
+      strengthBar.appendChild(span);
+  }
+  let spanRef = document.getElementsByClassName("strength");
+  for( let i = 0; i < spanRef.length; i++){
+      switch(spanRef.length - 1){
+          case 0 :
+              spanRef[i].style.background = "#710c04";
+              spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+
+              break;
+          case 1:
+              spanRef[i].style.background = "#ff3e36";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              // spanRef[i].style.paddingLeft= "-5px";
+              break;
+          case 2:
+              spanRef[i].style.background = "#ff691f";
+              // spanRef[i].style.marginLeft= "-10px";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              break;
+          case 3:
+              spanRef[i].style.background = "#ffda36";
+              // spanRef[i].style.marginLeft= "-10px";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              break;
+              case 4:
+              spanRef[i].style.background = "#0be881";
+              // spanRef[i].style.marginLeft= "-10px";
+              // spanRef[i].style.borderRadius = "10px 10px 10px 10px";
+              validator = true;
+              break;
+      }
+  }
+}
 
 let checking = false;
 let check2 = false;
@@ -38,6 +128,8 @@ form.addEventListener("submit", function (event) {
       userPassword: password,
       userConpass: conpassword,
       userName: username,
+
+
       u_id,
     };
     for (let i = 0; i < userArr.length; i++) {
@@ -50,14 +142,22 @@ form.addEventListener("submit", function (event) {
       }
     }
     if (check2 === false) {
+if (validator == true){
+
       userArr.push(userObj);
       const str = JSON.stringify(userArr);
       localStorage.setItem("user_info", str);
       console.log(str);
-      alert("user added");
+      alert("Successfully Registered");
+      window.location.href= "../pages/login.html"
+} else {
+  alert("Password is not strong")
+}
     }
   }
 });
+
+
 
 // let form_2 = document.getElementById("sign_form");
 // form_2.addEventListener("submit", function (event) {
@@ -111,15 +211,24 @@ logIn.addEventListener("submit", (event) => {
   let user_arr = [];
   let defaultData = JSON.parse(localStorage.getItem("user_info"));
   console.log(defaultData);
-  let username_log = document.getElementById("username").value;
+  let email_log = document.getElementById("email").value;
   let password_log = document.getElementById("password").value;
 
   let isMatch = false;
+  if(email_log == "admin@gmail.com" && password_log == "admin"){
+    Notify.success("Logged In");
+  window.open("/pages/admincompany.html");
+  } else if(email_log == "driver@gmail.com" && password_log == "driver"){
+    Notify.success("Logged In");
+    window.open("/pages/driverview.html");
+  } 
+   else{
   for (let i = 0; i < defaultData.length; i++) {
+
     if (
-      username_log == defaultData[i]["userName"] &&
+      email_log == defaultData[i]["userEmail"] &&
       password_log == defaultData[i]["userPassword"]
-    ) {
+    ) { 
       isMatch = true;
       user_arr.push(defaultData[i]);
       window.localStorage.setItem(
@@ -127,15 +236,15 @@ logIn.addEventListener("submit", (event) => {
         JSON.stringify(user_arr[0]["userEmail"])
       );
       break;
-    } else {
-      isMatch = false;
-    }
+    } 
+  
   }
+}
   if (isMatch === true) {
-    alert("Logged In");
-    // window.location.href = "";
+    Notify.success("Logged In");
+    window.open("/pages/otpverify.html")
   } else {
-    alert("Invalid username / password");
+    Notify.error("Invalid username / password");
   } // window.location.href = "";
 });
 

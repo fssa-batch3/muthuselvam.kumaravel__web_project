@@ -11,29 +11,32 @@
     <div class="whole_div">
       <img id="for_img" width="200" height="350" />
       <form id="update_form">
-        <label>Company Title <input type="text" id="cName" /></label>
-        <label>Company Innertitle<input type="text" id="cPrice" /></label>
+        <label>Company Title <input type="text" id="cName" pattern="[A-Za-z0-9]{1,25}" required/></label>
+        <label>Company Innertitle<input type="text" id="cPrice" pattern="[A-Za-z0-9]{1,25}" required/></label>
         <label>Image<input type="text" id="cImage" /></label>
-        <label>Description<input type="textarea" id="cDescription" /></label>
+        <label>Description<input type="textarea" id="cDescription" pattern="[A-Za-z0-9]{1,25}" required/></label>
         <button type="submit">SUBMIT</button>
-        <button type="submit" onclick="del()">DELETE</button>
+        <button  onclick="del()" id="delete">DELETE</button>
       </form>
     </div>
     <script>
       const upForm = document.getElementById("update_form");
       let params = window.location.search;
+      console.log(params);
       let parameter = new URLSearchParams(params);
       let paraName = parameter.get("id");
       let parraArray = JSON.parse(localStorage.getItem("proObject"));
       let paraObj = parraArray.find(function (user) {
         let title = user["title"];
-        // console.log(productName);
+        console.log(title);
         if (paraName == title) {
           return true;
         } else {
           return false;
         }
       });
+      console.log(paraObj);
+
       let title = document.getElementById("cName");
       let innertitle = document.getElementById("cPrice");
       let src = document.getElementById("cImage");
@@ -57,15 +60,17 @@
         proObject = {
           title,
           innertitle,
-          image: { src, alt },
+          img: { src, alt },
         };
         let newObj = Object.assign(paraObj, proObject);
         parraArray[index] = newObj;
         alert("updated Successfully ");
         localStorage.setItem("proObject", JSON.stringify(parraArray));
-        window.location.href = "./admincompany.html";
+        window.location.href = "../pages/admincompany.html";
       });
-      function del() {
+      let delete_com = document.getElementById("delete");
+      delete_com.addEventListener("click", function (event) {
+        event.preventDefault();
         console.log(index);
         let check = confirm("Would you like to delete your account ");
         if (check == true) {
@@ -73,11 +78,11 @@
           let index = parraArray.indexOf(paraObj);
           parraArray.splice(index, 1);
           console.log(parraArray);
-          alert("ur account delete successfully");
+          alert("delete successfully");
           localStorage.setItem("proObject", JSON.stringify(parraArray));
-          window.location.href = "./admin.html";
+          window.location.href = "../pages/admincompany.html";
         }
-      }
-    </script>
+      });
+    </script
   </body>
 </html>

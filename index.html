@@ -26,34 +26,34 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
-    <div class="hero">
+  <body  class="body" id="body" >
+    <div class="hero" id="blur">
       <nav>
         <h2 class="logo">INIFI<span class="span-1">NITI</span></h2>
         <ul>
            
           <li><a href="./pages/reviews.html">Reviews</a></li>
-          <li><a href="./pages/pricing.html">Pricing</a></li>
+          <li><a href="./pages/pricing.html" onclick="toggles_2()">History</a></li>
           <li><a href="#faq-1">FAQ</a></li>
           <li>
-            <a href="https://formsubmit.co/el/demegi"  
+            <a href="pages/support.html"  
               >Support</a
             >
           </li>
-          <li>
+          <li id="login_li">
             <a
               href="./pages/login.html"
               
               >Log In</a
             >
           </li>
-          <li><a href="./pages/profile.html">Profile</a></li>
+          <li><a href="" onclick="toggle()">Profile</a></li>
            
         </ul>
 
        <button class="btn">  <a
-          href="./pages/login.html"
-          class="book-now"
+          href=""
+          class="book-now" onclick="toggles()"
           >Book Now</a>
         </button>
         
@@ -100,7 +100,15 @@
     </div>
 
     <!-- ABOUT US / LEARN MORE -->
-
+    <div class="popup" id="popup"><button id="close" onclick="toggle_2()" >&times;</button>
+      <h2>Please Login To Continue</h2><br> <button class="log_btn"> <a href="./pages/login.html" class="log_popup">Log In</a></button>
+    </div>
+    <div class="popup_2" id="popup_2"><button id="close" onclick="toggle_5()" >&times;</button>
+      <h2>Please Complete your Profile To Book</h2><br><button class="pro_btn"> <a href="./pages/profile.html" class="pro_popup">Profile</a></button>
+    </div>
+    <div class="popup_3" id="popup_3"><button id="close" onclick="toggle_7()" >&times;</button>
+      <h2>Please Complete your First Booking</h2>
+    </div>
     <section class="about" id="about-1">
       <div class="main">
         <img src="./Assests/images/undraw_interview_re_e5jn.svg" alt="" />
@@ -248,9 +256,162 @@
         </center>
       </div>
     </footer>
+    
 
-     
+    <script>
+      (function (Q, R) {
+          if(Q.qr) return;
+          var u = 'https://webview.quickreply.ai/whatsapp/script.min.js';
+          var h = R.head || R.documentElement;
+          var e = R.createElement('script');
+          e.type = 'text/javascript';
+          e.async = true;
+          e.src = u;
+          Q.qr = {
+              brandSetting: {
+                  includePageLink: false,
+                  messageText: "Hi.. I have a query.",
+                  phoneNumber: "+919363630498"
+              },
+              chatButtonSetting: {
+                  sideMargin: 20,
+                  marginBottom: 20,
+                  position: "right",
+                  buttonType: "ICON_TEXT",
+                  buttonText: "Chat Now",
+                  buttonBgColor: "#f9004d",
+                  buttonTextColor: "#fff"
+              }
+          };
+          e.onload = function () {
+              CreateWhatsappChatWidget(Q.qr);
+          };
+          h.insertBefore(e, h.lastChild);
+      })(window, document);
+</script>
+                        
 
+<script>
+function toggle(){
+if(JSON.parse(localStorage.getItem("login_user")) == null){
+
+  event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+} else {
+  window.open("/pages/profile.html")
+}
+
+}
+function toggle_2(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
+function toggle_5(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup_2");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
+
+function toggle_3(){
+
+
+  event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+} 
+
+
+
+function toggle_4(){
+  event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup_2");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+}
+
+function toggle_6(){
+  event.preventDefault();
+let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup_3");
+popup.classList.toggle("active");
+let body = document.getElementById("body")
+body.classList.add("stop-scrolling");
+}
+
+function toggle_7(){
+  
+  let blur = document.getElementById("blur");
+blur.classList.toggle("active");
+let popup = document.getElementById("popup_3");
+popup.classList.toggle("active");
+let body_2 = document.getElementById("body")
+body_2.classList.remove("stop-scrolling");
+}
+
+
+
+
+function toggles(){
+  if(JSON.parse(localStorage.getItem("login_user")) == null){
+  toggle_3();
+  } else if (JSON.parse(localStorage.getItem("profile_count")) == null){
+    toggle_4();
+  
+  } else{
+    window.open("/pages/company logo.html")
+  }
+
+}
+
+function toggles_2(){
+  if(JSON.parse(localStorage.getItem("login_user")) == null){
+  toggle_3();
+  } else if (JSON.parse(localStorage.getItem("bookingObject")) == null){
+    toggle_6();
+  
+  } else{
+    window.open("/pages/pricing.html")
+  }
+
+}
+
+if(JSON.parse(localStorage.getItem("login_user")) != null){
+  let item = document.getElementById("login_li");
+  item.parentNode.removeChild(item)
+}
+
+if(JSON.parse(localStorage.getItem("login_user")) == null){
+  let item = document.getElementById("login_li");
+  item.parentNode.appendChild(item)
+}
+
+
+
+
+</script>   
+                      
 
   </body>
 </html>

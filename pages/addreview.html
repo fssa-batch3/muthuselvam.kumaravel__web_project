@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Assests/css/addreview.css">
+  <title>feedback form</title>
+</head>
+<body>
+  <form  id="231025735507451" >
+    <div id="main">
+            <div id="main_2">
+              <h1 id="header_1" >Feedback Form</h1>
+              <div id="subHeader_1"  style="color: #57647e; " >We would love to hear your thoughts, suggestions, concerns or problems with anything so we can improve!</div>
+            </div>
+         <hr>
+            <div id="main_3">
+        <label  id="label_4" > Describe Your Feedback:<span >*</span> </label>
+          <div id="cid_4" > <textarea id="input_4"  style="width:648px;height:163px; " ></textarea> </div>
+        </div>
+
+        <div>
+       <label id="label_8" > Name<span >*</span> </label>
+         
+            <div ><input type="text" id="first_8" required pattern="[^-\s][a-zA-Z\s]+$" title="Firstname must not contain numbers and not start with spaces"  /><label id="sublabel_8_first" style="min-height:13px" >First Name</label> <div id="last_name"> <input type="text" id="last_8" required pattern="[^-\s][a-zA-Z\s]+$" title="Lastname must not contain numbers and not start with spaces" /><label  id="sublabel_8_first" style="min-height:13px" >Last Name</label></div></div></div>
+          
+      <div class="email-top">
+        <label  id="label_6" > E-mail<span >*</span> </label>
+          <div id="cid_6" > <input type="email" id="input_6" disabled required /> </div>
+    
+       <label  id="label_6" >Date </label>
+          <div id="cid_7" > <input type="text"  id="input_7" disabled required/> </div>
+       
+
+          <hr id="second" > 
+        
+          <div id="cid_2" >
+            <button id="input_2" type="submit" >Submit Feedback</button>
+          </div>
+       
+        
+        </div>
+    
+   
+   
+    
+   
+  </form>
+  <script type="text/javascript">
+  
+    let parseEmail = JSON.parse(localStorage.getItem("login_user"))
+
+   
+document.getElementById("input_7").value = new Date().toLocaleDateString();
+document.getElementById("input_6").value = parseEmail;
+const form = document.getElementById("231025735507451");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let reviewArray = [];
+        if (localStorage.getItem("reviewObject") != null) {
+          reviewArray = JSON.parse(localStorage.getItem("reviewObject"));
+        }
+        let para = document.getElementById("input_4").value;
+        let name = document.getElementById("first_8").value;
+        let lastname = document.getElementById("last_8").value;
+        let email = document.getElementById("input_6").value;
+        let date = document.getElementById("input_7").value;
+        
+
+        reviewObject = {
+          para,
+          name,
+          date,
+          email,
+          lastname,
+        };
+        reviewArray.push(reviewObject);
+        console.log(reviewArray);
+        stringProduct = JSON.stringify(reviewArray);
+        localStorage.setItem("reviewObject", stringProduct);
+        alert("submitted");
+        window.open("/pages/reviews.html")
+      });
+
+  </script>
+</body>
+</html>
+
+
+
